@@ -118,3 +118,8 @@
 🖤 **Black background. Gold mindset. Strong future.**
 
 </div>
+## 🐍 Contribution Snake Game (Live)
+
+<p align="center">
+  <img src="https://github.com/needtoimprove/needtoimprove/blob/output/github-contribution-grid-snake-dark.svg" />
+</p>
