@@ -1,82 +1,96 @@
-<!-- ================== AESTHETIC PROFILE README ================== -->
+<!-- ================= HEADER BANNER ================= -->
 
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?
-  font=JetBrains+Mono
-  &size=30
-  &pause=1000
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?
+  type=waving
+  &color=0:0f2027,50:203a43,100:2c5364
+  &height=220
+  &section=header
+  &text=Varun%20Solanki
+  &fontSize=45
+  &fontColor=ffffff
+  &animation=fadeIn" />
+</p>
+
+<h3 align="center">AI / ML • Full Stack • LLMs & Intelligent Systems</h3>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?
+  size=22
+  &duration=3000
   &color=F5C542
   &center=true
   &vCenter=true
-  &width=650
-  &lines=Hi+👋,+I'm+Varun+Solanki;
-  AI+%26+ML+Enthusiast;
-  Full+Stack+Learner;
-  Future+Innovator+🚀" />
-</h1>
-
-<h3 align="center" style="color:#c9b037;">
-  AI/ML Enthusiast • Full Stack Learner • Future Innovator
-</h3>
+  &width=700
+  &lines=AI%2FML+Enthusiast+and+Future+Engineer;
+  Building+Intelligent+Systems;
+  Learning+by+Building+and+Breaking;
+  Turning+Ideas+into+Real+Solutions+🚀" />
+</p>
 
 ---
 
-<div align="center">
+## 👨‍💻 About Me
 
-🌑 **Turning ideas into intelligent systems**  
-🐍 **Learning by building, breaking, and rebuilding**  
-⚡ **Passionate about AI, ML & real-world problem solving**
+🎓 Student & aspiring **AI/ML Engineer**  
+🤖 Passionate about **Artificial Intelligence, Machine Learning & LLMs**  
+🌐 Learning **Full Stack Development (Flask & Django)**  
+🛠 Building **chatbots, assistants & smart systems**  
+🎯 Goal: Build **impactful tech** and secure a **top internship / MNC role**
 
-</div>
-
----
-
-## 🧠 About Me
-
-- 🎓 Student & aspiring **AI/ML Engineer**
-- 🤖 Interested in **Artificial Intelligence, Machine Learning & LLMs**
-- 🌐 Learning **Full Stack (Flask & Django)**
-- 🛠️ Love building **chatbots, assistants & smart systems**
-- 🚀 Goal: Build **impactful tech that actually matters**
+I focus on **hands-on execution**, not just theory — learning by doing and improving every day.
 
 ---
 
-## 🛠️ Skills
+## 🧠 Tech Stack & Skills
 
-### 💻 Programming
-![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=gold)
-![Java](https://img.shields.io/badge/Java-black?style=for-the-badge&logo=java&logoColor=gold)
-![C](https://img.shields.io/badge/C-black?style=for-the-badge&logo=c&logoColor=gold)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,java,c,html,css,flask,django,git,github,linux,vscode&theme=dark" />
+</p>
 
-### 🌐 Web & Backend
-![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=flask&logoColor=gold)
-![Django](https://img.shields.io/badge/Django-black?style=for-the-badge&logo=django&logoColor=gold)
-![HTML](https://img.shields.io/badge/HTML-black?style=for-the-badge&logo=html5&logoColor=gold)
-![CSS](https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=css3&logoColor=gold)
-
-### 🤖 AI / ML
-- Machine Learning Basics  
-- Neural Networks  
-- LLM APIs  
-- Chatbot Development  
-- Prompt Engineering  
+### Core Areas
+- Artificial Intelligence & Machine Learning  
+- Chatbot & Assistant Development  
+- LLM APIs & Prompt Engineering  
+- Full Stack Web Development  
+- Systematic Problem Solving  
 
 ---
 
 ## 📜 Certifications
 
-- ✅ Python Programming  
-- ✅ Machine Learning Fundamentals  
-- ✅ AI & Generative AI Basics  
-- ✅ Full Stack Development *(Ongoing)*  
+🏅 **Multiple certifications including**
+- Python Programming  
+- Machine Learning Fundamentals  
+- AI & Generative AI Basics  
+- Full Stack Development *(Ongoing)*  
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Certifications-Learning%20Continuously-gold?style=for-the-badge" />
+</p>
 
 ---
 
-## 🐍 Contribution Snake (Aesthetic Black Theme)
+## 🚀 Featured Projects
+
+🔹 **AI Chatbots** – conversational, task-oriented systems  
+🔹 **Voice Assistants** – intelligent, interactive assistants  
+🔹 **Full Stack Apps** – Flask & Django based projects  
+🔹 **Logic & System Projects** – data structures & algorithms  
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Projects-Building%20Daily-blueviolet?style=for-the-badge" />
+</p>
+
+---
+
+## 🐍 Contribution Snake (AUTO ANIMATION)
 
 <p align="center">
   <img src="https://github.com/needtoimprove/needtoimprove/blob/output/github-contribution-grid-snake-dark.svg" />
 </p>
+
+> ⚠️ Snake updates automatically once GitHub Action is enabled.
 
 ---
 
@@ -106,20 +120,11 @@
 ## 🌐 Connect With Me
 
 <p align="center">
-  <img src="https://img.shields.io/badge/LinkedIn-Coming%20Soon-black?style=for-the-badge&logo=linkedin&logoColor=gold"/>
-  <img src="https://img.shields.io/badge/Portfolio-Coming%20Soon-black?style=for-the-badge&logo=vercel&logoColor=gold"/>
+  <img src="https://img.shields.io/badge/LinkedIn-Coming%20Soon-black?style=for-the-badge&logo=linkedin&logoColor=gold" />
+  <img src="https://img.shields.io/badge/Portfolio-Coming%20Soon-black?style=for-the-badge&logo=vercel&logoColor=gold" />
 </p>
 
 ---
 
-<div align="center" style="color:#c9b037;">
-
-✨ *“Code is poetry when logic meets creativity.”* ✨  
-🖤 **Black background. Gold mindset. Strong future.**
-
-</div>
-## 🐍 Contribution Snake Game (Live)
-
-<p align="center">
-  <img src="https://github.com/needtoimprove/needtoimprove/blob/output/github-contribution-grid-snake-dark.svg" />
-</p>
+⭐ *Learning. Building. Improving. Every single day.*  
+🖤 **Black theme. Gold focus. Strong future.**
