@@ -84,12 +84,11 @@ I focus on **hands-on execution**, not just theory — learning by doing and imp
 
 ---
 
-## 🐍 Contribution Snake (AUTO ANIMATION)
+## 🐍 Contribution Snake Game
 
 <p align="center">
-  <img src="https://github.com/needtoimprove/needtoimprove/blob/output/github-contribution-grid-snake-dark.svg" />
+  <img src="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg" />
 </p>
-
 > ⚠️ Snake updates automatically once GitHub Action is enabled.
 
 ---
