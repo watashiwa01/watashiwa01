@@ -1,7 +1,18 @@
 <!-- ================== AESTHETIC PROFILE README ================== -->
 
-<h1 align="center" style="color:#f5c542;">
-  Hi 👋, I'm Varun Solanki
+<h1 align="center">
+  <img src="https://readme-typing-svg.demolab.com?
+  font=JetBrains+Mono
+  &size=30
+  &pause=1000
+  &color=F5C542
+  &center=true
+  &vCenter=true
+  &width=650
+  &lines=Hi+👋,+I'm+Varun+Solanki;
+  AI+%26+ML+Enthusiast;
+  Full+Stack+Learner;
+  Future+Innovator+🚀" />
 </h1>
 
 <h3 align="center" style="color:#c9b037;">
@@ -44,53 +55,66 @@
 ![CSS](https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=css3&logoColor=gold)
 
 ### 🤖 AI / ML
-- Machine Learning Basics
-- Neural Networks
-- LLM APIs
-- Chatbot Development
-- Prompt Engineering
+- Machine Learning Basics  
+- Neural Networks  
+- LLM APIs  
+- Chatbot Development  
+- Prompt Engineering  
 
 ---
 
 ## 📜 Certifications
 
-- ✅ Python Programming
-- ✅ Machine Learning Fundamentals
-- ✅ AI & Generative AI Basics
-- ✅ Full Stack Development (Ongoing)
-
-_(Add links here later if you want)_  
+- ✅ Python Programming  
+- ✅ Machine Learning Fundamentals  
+- ✅ AI & Generative AI Basics  
+- ✅ Full Stack Development *(Ongoing)*  
 
 ---
 
 ## 🐍 Contribution Snake (Aesthetic Black Theme)
 
-![snake gif](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake-dark.svg)
+<p align="center">
+  <img src="https://github.com/needtoimprove/needtoimprove/blob/output/github-contribution-grid-snake-dark.svg" />
+</p>
 
 ---
 
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=dark&title_color=f5c542&icon_color=f5c542" />
+  <img src="https://github-readme-stats.vercel.app/api?
+  username=needtoimprove
+  &show_icons=true
+  &theme=dark
+  &title_color=F5C542
+  &icon_color=F5C542
+  &hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=dark&ring=f5c542&fire=f5c542" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?
+  user=needtoimprove
+  &theme=dark
+  &ring=F5C542
+  &fire=F5C542
+  &hide_border=true" />
 </p>
 
 ---
 
 ## 🌐 Connect With Me
 
-- 💼 LinkedIn: _Coming Soon_
-- 📧 Email: _Add your email_
-- 🧠 Portfolio: _Coming Soon_
+<p align="center">
+  <img src="https://img.shields.io/badge/LinkedIn-Coming%20Soon-black?style=for-the-badge&logo=linkedin&logoColor=gold"/>
+  <img src="https://img.shields.io/badge/Portfolio-Coming%20Soon-black?style=for-the-badge&logo=vercel&logoColor=gold"/>
+</p>
 
 ---
 
 <div align="center" style="color:#c9b037;">
 
 ✨ *“Code is poetry when logic meets creativity.”* ✨  
+🖤 **Black background. Gold mindset. Strong future.**
 
 </div>
