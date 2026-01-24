@@ -1,35 +1,15 @@
-<!-- ===================== SOFT CYBERPUNK HEADER ===================== -->
+<!-- ===================== VISIBLE ANIMATED HEADER ===================== -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?
-  type=rect
-  &height=260
-  &color=0:0f2027,50:203a43,100:2c5364
-  &text=Varun%20Solanki
-  &fontSize=48
-  &fontColor=ffffff
-  &fontAlignY=40
-  &desc=B.Tech%20AIML%20•%20AI%20Systems%20Builder%20•%20Long-Term%20Thinker
-  &descAlignY=60
-  &animation=fadeIn" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=260&color=gradient&text=Varun%20Solanki&fontSize=48&fontAlignY=40&desc=B.Tech%20AIML%20•%20AI%20Systems%20Builder%20•%20Long-Term%20Thinker&descAlignY=60&animation=fadeIn" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?
-  font=JetBrains+Mono
-  &size=22
-  &pause=800
-  &color=38BDF8
-  &center=true
-  &vCenter=true
-  &width=850
-  &lines=Artificial+Intelligence+%26+Machine+Learning;
-  Designing+Intelligent+Systems;
-  Thinking+in+Models%2C+Data+%26+Systems;
-  Building+for+the+Next+Decade+⚡" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=800&color=00E5FF&center=true&vCenter=true&width=850&lines=Artificial+Intelligence+%26+Machine+Learning;Designing+Intelligent+Systems;Thinking+in+Models%2C+Data+%26+Systems;Building+for+the+Next+Decade+⚡" />
 </p>
 
 <hr/>
+
 
 ## 🧠 About Me
 
