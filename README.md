@@ -1,28 +1,44 @@
 <!-- ===================== CYBERPUNK PROFILE ===================== -->
 
-<h1 align="center">
-  ⚡ Varun Solanki ⚡
-</h1>
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?
+  type=waving
+  &height=230
+  &color=0:0f2027,50:203a43,100:2c5364
+  &section=header
+  &animation=fadeIn
+  &fontColor=ffffff
+  &fontSize=48
+  &text=Varun%20Solanki" />
+</p>
 
 <h3 align="center">
-  B.Tech AIML • AI Systems Builder • Long-Term Thinker
+  ⚡ B.Tech AIML • AI Systems Builder • Long-Term Thinker ⚡
 </h3>
 
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?
-  size=20
-  &duration=2800
+  font=JetBrains+Mono
+  &size=22
+  &duration=2600
+  &pause=500
   &color=00E5FF
   &center=true
   &vCenter=true
-  &width=750
+  &width=800
   &lines=Artificial+Intelligence+%26+Machine+Learning;
   Designing+Intelligent+Systems;
   Thinking+in+Models%2C+Not+Just+Code;
-  Building+for+the+Next+Decade+🚀" />
+  Building+for+the+Next+Decade+⚡" />
 </p>
 
----
+<div align="center">
+
+✨ **AI • ML • Intelligent Systems • Long-Term Thinking** ✨
+
+</div>
+
+<hr/>
 
 ## 🧠 About Me
 
@@ -35,15 +51,13 @@
 
 ---
 
-## 🎯 Long-Term Goal (Read This Carefully)
+## 🎯 Long-Term Goal
 
 🧠 **Design and build intelligent systems that scale beyond demos**  
-⚙️ **Work at the intersection of AI research, engineering & products**  
-🌍 **Contribute to AI systems that shape how humans interact with technology**  
+⚙️ **Operate at the intersection of AI research, engineering & products**  
+🌍 **Contribute to AI systems that redefine human–computer interaction**  
 
-> The aim is mastery first — opportunities follow naturally.
-
-(This line alone separates you from 95% profiles.)
+> Mastery first. Impact follows.
 
 ---
 
