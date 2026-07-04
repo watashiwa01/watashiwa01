@@ -1,0 +1,93 @@
+<svg width="100%" height="340" viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgShift" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05010a">
+        <animate attributeName="stop-color" values="#05010a;#1a0025;#001a12;#05010a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#12002a">
+        <animate attributeName="stop-color" values="#12002a;#00120e;#1a0025;#12002a" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#000">
+        <animate attributeName="stop-color" values="#000;#0a0014;#000;#000" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="scan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00ff9c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00ff9c" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="340" rx="16" fill="url(#bgShift)"/>
+  <rect x="2" y="2" width="996" height="336" rx="14" fill="none" stroke="#00ff9c" stroke-width="1.6">
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- scan sweep -->
+  <rect x="-220" y="0" width="220" height="340" fill="url(#scan)">
+    <animateTransform attributeName="transform" type="translate" values="-220 0; 1000 0; -220 0" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- floating particles (EXP orbs rising) -->
+  <g fill="#00ff9c">
+    <circle r="2.4" opacity="0.8"><animateMotion path="M60,330 C40,220 90,120 55,10" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="6s" repeatCount="indefinite"/></circle>
+    <circle r="2" fill="#ff3fa4" opacity="0.8"><animateMotion path="M200,330 C220,240 170,140 210,10" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/></circle>
+    <circle r="2.6" fill="#7d7dff" opacity="0.8"><animateMotion path="M820,330 C800,230 850,130 810,10" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="5.5s" repeatCount="indefinite"/></circle>
+    <circle r="2" opacity="0.8"><animateMotion path="M940,330 C920,220 960,120 930,10" dur="6.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="6.5s" repeatCount="indefinite"/></circle>
+    <circle r="2.2" fill="#ffd166" opacity="0.8"><animateMotion path="M470,330 C500,230 440,130 480,10" dur="7.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- HUD corner brackets, pulsing -->
+  <g stroke="#00ff9c" stroke-width="2" fill="none">
+    <path d="M24 24 L24 50 M24 24 L50 24"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
+    <path d="M976 24 L976 50 M976 24 L950 24"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
+    <path d="M24 316 L24 290 M24 316 L50 316"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
+    <path d="M976 316 L976 290 M976 316 L950 316"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
+  </g>
+
+  <text x="500" y="72" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="13" fill="#00ff9c" letter-spacing="5" opacity="0.85">
+    ARCHIVE // ANOMALOUS HUNTER FILE
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- GLITCH TITLE: three offset colored layers flicker in and out -->
+  <g font-family="Share Tech Mono, monospace" font-size="64" font-weight="700" text-anchor="middle" letter-spacing="4">
+    <text x="503" y="150" fill="#ff3fa4" opacity="0.7">
+      MR. FOOL
+      <animate attributeName="x" values="503;497;505;500;503" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0;0.5;0" dur="2.6s" repeatCount="indefinite"/>
+    </text>
+    <text x="497" y="150" fill="#7d7dff" opacity="0.7">
+      MR. FOOL
+      <animate attributeName="x" values="497;503;495;500;497" dur="3.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0;0.6;0;0.5" dur="3.1s" repeatCount="indefinite"/>
+    </text>
+    <text x="500" y="150" fill="#eafff0" filter="url(#glow)">MR. FOOL</text>
+  </g>
+
+  <text x="500" y="188" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="14" fill="#8affc1" letter-spacing="2">
+    THE ONE WHO PLAYS DUMB WHILE THE SYSTEM LEVELS UP
+  </text>
+
+  <!-- EXP ring, spinning + filling -->
+  <g transform="translate(500,246)">
+    <circle r="26" fill="none" stroke="#123" stroke-width="6"/>
+    <circle r="26" fill="none" stroke="#00ff9c" stroke-width="6" stroke-linecap="round"
+            stroke-dasharray="163" stroke-dashoffset="163" transform="rotate(-90)">
+      <animate attributeName="stroke-dashoffset" values="163;20;163" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="6" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="12" fill="#eafff0">EXP</text>
+  </g>
+
+  <!-- terminal line with blinking cursor -->
+  <text x="500" y="312" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="14" fill="#00ff9c">
+    <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">unknown-rank</tspan><tspan fill="#5f5f5f">:~$ </tspan><tspan fill="#eafff0">whoami --classified</tspan>
+    <tspan fill="#00ff9c">▌<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/></tspan>
+  </text>
+</svg>

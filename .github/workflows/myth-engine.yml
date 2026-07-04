@@ -1,0 +1,32 @@
+name: Myth Engine Cycle
+
+on:
+  schedule:
+    - cron: "*/7 * * * *"
+  workflow_dispatch:
+
+jobs:
+  myth:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Drift myth state
+        run: |
+          STATES=("klein_canon" "fool_canon" "contradiction" "unknown_truth")
+
+          STATE=${STATES[$RANDOM % ${#STATES[@]}]}
+
+          echo "{
+            \"myth_state\": \"$STATE\",
+            \"note\": \"all versions are canon somewhere\"
+          }" > api/state.json
+
+      - name: Commit myth shift
+        run: |
+          git config user.name "myth-engine"
+          git config user.email "myth@eternal"
+          git add .
+          git commit -m "myth drift event" || exit 0
+          git push
