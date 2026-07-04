@@ -1,0 +1,101 @@
+<svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a001a"/>
+      <stop offset="100%" stop-color="#001a0e"/>
+    </linearGradient>
+    <linearGradient id="cardBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#150025"/>
+      <stop offset="100%" stop-color="#000d1a"/>
+    </linearGradient>
+    <linearGradient id="cardBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a0010"/>
+      <stop offset="100%" stop-color="#0d0025"/>
+    </linearGradient>
+    <filter id="gCard">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    @keyframes borderPulse1 { 0%,100%{stroke:#00ff9c;opacity:0.7} 50%{stroke:#00c2ff;opacity:1} }
+    @keyframes borderPulse2 { 0%,100%{stroke:#ff3fa4;opacity:0.7} 50%{stroke:#7d7dff;opacity:1} }
+    @keyframes borderPulse3 { 0%,100%{stroke:#ffd166;opacity:0.7} 50%{stroke:#00ff9c;opacity:1} }
+    @keyframes numFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+    @keyframes barFill1 { 0%,100%{width:0} 30%,80%{width:198px} }
+    @keyframes barFill2 { 0%,100%{width:0} 30%,80%{width:165px} }
+    @keyframes barFill3 { 0%,100%{width:0} 30%,80%{width:145px} }
+    .c1-border { animation: borderPulse1 2s infinite ease-in-out; }
+    .c2-border { animation: borderPulse2 2.5s infinite ease-in-out; }
+    .c3-border { animation: borderPulse3 3s infinite ease-in-out; }
+    .num-float { animation: numFloat 3s infinite ease-in-out; }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="240" rx="16" fill="#040008"/>
+  <rect x="1" y="1" width="898" height="238" rx="15" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Section Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" fill="#00ff9c" letter-spacing="8" opacity="0.9">
+    THE THREE FRONTS — COGNITIVE ALCHEMY
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- CARD 1: AI/ML -->
+  <g transform="translate(30, 55)">
+    <rect width="240" height="160" rx="12" fill="url(#cardBg1)" class="c1-border" stroke="#00ff9c" stroke-width="1.5"/>
+    <!-- Scan sweep -->
+    <rect x="0" y="0" width="240" height="3" rx="2" fill="#00ff9c" opacity="0.15">
+      <animate attributeName="y" values="-5;165;-5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="38" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="20" fill="#00ff9c" filter="url(#gCard)">🧠</text>
+    <text x="120" y="62" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" fill="#00ff9c" letter-spacing="3">COGNITIVE ALCHEMY</text>
+    <text x="120" y="80" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#5aff9c" opacity="0.7">neural networks · LLM · applied systems</text>
+    <!-- Bar -->
+    <rect x="20" y="100" width="200" height="8" rx="4" fill="#0d0d0d"/>
+    <rect x="20" y="100" height="8" rx="4" fill="#00ff9c">
+      <animate attributeName="width" values="0;198;198;0" keyTimes="0;0.3;0.8;1" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="130" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="22" fill="#eafff0" class="num-float">88%</text>
+    <text x="120" y="148" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#00ff9c" opacity="0.6">RESONANCE LEVEL</text>
+  </g>
+
+  <!-- CARD 2: Cybersecurity -->
+  <g transform="translate(330, 55)">
+    <rect width="240" height="160" rx="12" fill="url(#cardBg2)" class="c2-border" stroke="#ff3fa4" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="3" rx="2" fill="#ff3fa4" opacity="0.15">
+      <animate attributeName="y" values="-5;165;-5" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="38" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="20" fill="#ff3fa4" filter="url(#gCard)">🔓</text>
+    <text x="120" y="62" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" fill="#ff3fa4" letter-spacing="3">DEFENSIVE OFFENSE</text>
+    <text x="120" y="80" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#ff9acb" opacity="0.7">offense theory · defense architecture</text>
+    <rect x="20" y="100" width="200" height="8" rx="4" fill="#0d0d0d"/>
+    <rect x="20" y="100" height="8" rx="4" fill="#ff3fa4">
+      <animate attributeName="width" values="0;165;165;0" keyTimes="0;0.3;0.8;1" dur="5s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="130" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="22" fill="#eafff0" class="num-float">75%</text>
+    <text x="120" y="148" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#ff3fa4" opacity="0.6">RESONANCE LEVEL</text>
+  </g>
+
+  <!-- CARD 3: Blockchain -->
+  <g transform="translate(630, 55)">
+    <rect width="240" height="160" rx="12" fill="url(#cardBg3)" class="c3-border" stroke="#ffd166" stroke-width="1.5"/>
+    <rect x="0" y="0" width="240" height="3" rx="2" fill="#ffd166" opacity="0.15">
+      <animate attributeName="y" values="-5;165;-5" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="38" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="20" fill="#ffd166" filter="url(#gCard)">⛓</text>
+    <text x="120" y="62" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" fill="#ffd166" letter-spacing="3">TRUSTLESS RAILS</text>
+    <text x="120" y="80" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#ffe9a0" opacity="0.7">smart contracts · DeFi attack surfaces</text>
+    <rect x="20" y="100" width="200" height="8" rx="4" fill="#0d0d0d"/>
+    <rect x="20" y="100" height="8" rx="4" fill="#ffd166">
+      <animate attributeName="width" values="0;145;145;0" keyTimes="0;0.3;0.8;1" dur="5s" begin="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="120" y="130" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="22" fill="#eafff0" class="num-float">68%</text>
+    <text x="120" y="148" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#ffd166" opacity="0.6">RESONANCE LEVEL</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="450" y="228" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="9" fill="#5f5f5f" letter-spacing="2">
+    [ anomaly lies not in any single path — but in their intersection ]
+  </text>
+</svg>

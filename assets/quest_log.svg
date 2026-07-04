@@ -1,0 +1,89 @@
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="questBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000"/>
+      <stop offset="100%" stop-color="#0f0018"/>
+    </linearGradient>
+  </defs>
+  <style>
+    @keyframes checkGlow { 0%,100%{fill:#00ff9c;opacity:0.7} 50%{fill:#00ff9c;opacity:1} }
+    @keyframes lockBlink { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+    @keyframes lineReveal { 0%{opacity:0} 50%,100%{opacity:1} }
+    @keyframes progressDrift { 0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0} }
+    .check-glow { animation: checkGlow 2s infinite ease-in-out; }
+    .lock-blink { animation: lockBlink 2.5s infinite ease-in-out; }
+  </style>
+
+  <rect width="900" height="300" rx="16" fill="url(#questBg)"/>
+  <rect x="1" y="1" width="898" height="298" rx="15" fill="none" stroke="#7d7dff" stroke-width="1" opacity="0.4">
+    <animate attributeName="stroke-dasharray" values="0 2200;2200 0" dur="3s" fill="freeze"/>
+  </rect>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" fill="#7d7dff" letter-spacing="8">
+    THE ASCENSION PROTOCOL — ACTIVE QUESTS
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </text>
+  <line x1="30" y1="48" x2="870" y2="48" stroke="#7d7dff" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Season label -->
+  <text x="50" y="68" font-family="Share Tech Mono,monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">SEASON I: FOOL'S ASCENT</text>
+
+  <!-- Quest 1: Completed -->
+  <g transform="translate(30, 85)">
+    <rect width="34" height="18" rx="4" fill="#00ff9c" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#00ff9c" class="check-glow">✓</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#8affc1">Unravel Python → materialize initial neural network</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#00ff9c" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 2: Completed -->
+  <g transform="translate(30, 118)">
+    <rect width="34" height="18" rx="4" fill="#00ff9c" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#00ff9c" class="check-glow">✓</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#8affc1">Forge full-stack intelligent agent application</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#00ff9c" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 3: Completed -->
+  <g transform="translate(30, 151)">
+    <rect width="34" height="18" rx="4" fill="#00ff9c" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#00ff9c" class="check-glow">✓</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#8affc1">Infiltrate cybersecurity and ledger fundamentals</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#00ff9c" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 4: In Progress -->
+  <g transform="translate(30, 184)">
+    <rect width="34" height="18" rx="4" fill="#ff3fa4" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#ff3fa4" class="lock-blink">◈</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#cfcfcf">Construct a production-grade autonomous engine</text>
+    <text x="720" y="14" font-family="Share Tech Mono,monospace" font-size="9" fill="#ff3fa4" class="lock-blink">IN PROGRESS</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#ff3fa4" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 5: In Progress -->
+  <g transform="translate(30, 217)">
+    <rect width="34" height="18" rx="4" fill="#ff3fa4" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#ff3fa4" class="lock-blink">◈</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#cfcfcf">Map smart-contract exploits and DeFi vulnerability matrices</text>
+    <text x="720" y="14" font-family="Share Tech Mono,monospace" font-size="9" fill="#ff3fa4" class="lock-blink">IN PROGRESS</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#ff3fa4" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 6: Locked -->
+  <g transform="translate(30, 250)">
+    <rect width="34" height="18" rx="4" fill="#5f5f5f" opacity="0.15"/>
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#5f5f5f">⬡</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#5f5f5f">Command an autonomous AI on trustless infrastructure</text>
+    <text x="720" y="14" font-family="Share Tech Mono,monospace" font-size="9" fill="#5f5f5f">LOCKED</text>
+    <line x1="0" y1="20" x2="840" y2="20" stroke="#5f5f5f" stroke-width="0.3" opacity="0.2"/>
+  </g>
+
+  <!-- Quest 7: Locked -->
+  <g transform="translate(30, 278)">
+    <text x="5" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#5f5f5f">⬡</text>
+    <text x="48" y="14" font-family="Share Tech Mono,monospace" font-size="12" fill="#5f5f5f">Pioneer a new protocol in human-computer alignment</text>
+    <text x="720" y="14" font-family="Share Tech Mono,monospace" font-size="9" fill="#5f5f5f">LOCKED</text>
+  </g>
+</svg>

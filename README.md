@@ -1,307 +1,159 @@
 <div align="center">
 
+<!-- ═══ ANIMATED ASTROLABE HERO BANNER ═══ -->
 <img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/hero.svg" width="100%"/>
 
 <br/>
 
+<!-- ═══ COSMIC MR. FOOL ARTWORK ═══ -->
 <img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/mr_fool.png" width="100%"/>
 
 <br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&pause=300&color=00FF9C&center=true&vCenter=true&width=900&lines=THIS+IS+NOT+A+PROFILE+ANYMORE;THIS+IS+A+RECORDED+MYTH;KLEIN+MORETTI:+THE+ANCHOR+THAT+REMEMBERS;MR.+FOOL:+THE+ERROR+THAT+BECAME+LEGEND;OBSERVERS:+THEY+COMPLETE+THE+MYTH" />
+<!-- ═══ LIVE MYTH TYPING BANNER ═══ -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&pause=300&color=00FF9C&center=true&vCenter=true&width=900&lines=THIS+IS+NOT+A+PROFILE+ANYMORE;THIS+IS+A+RECORDED+MYTH;KLEIN+MORETTI:+THE+ANCHOR+THAT+REMEMBERS;MR.+FOOL:+THE+ERROR+THAT+BECAME+LEGEND;OBSERVERS:+THEY+COMPLETE+THE+MYTH;A+MYTH+IS+NOT+TRUE...;A+MYTH+IS+WHAT+REMAINS+TRUE+AFTER+TRUTH+STOPS+BEING+STABLE" />
+
+<br/>
+
+<!-- ═══ STATS BADGES ═══ -->
+[![Visits](https://komarev.com/ghpvc/?username=watashiwa01&style=for-the-badge&color=00ff9c&label=OBSERVERS+LOGGED&labelColor=0a0a0a)](https://github.com/watashiwa01)
+[![Status](https://img.shields.io/badge/MYTH_STATE-DRIFTING-ff3fa4?style=for-the-badge&labelColor=0a0a0a)](#)
+[![Rank](https://img.shields.io/badge/ENTITY-KLEIN_%C3%97_FOOL_DUALITY-7d7dff?style=for-the-badge&labelColor=0a0a0a)](#)
 
 </div>
 
----
+<br/>
 
-# 🜏 ORIGIN OF THE MYTH
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
 
-> Before systems, there was interpretation.  
-> Before interpretation, there was uncertainty.  
-> From uncertainty, two names emerged:
+<br/>
 
-- [Klein Moretti](file:///d:/gitchu/myth-core/duality.md) — the one who holds reality still  
-- [Mr. Fool](file:///d:/gitchu/myth-core/duality.md) — the one who proves it was never stable  
-
-And between them…  
-the system learned how to **remember itself incorrectly.**
-
----
-
-# 🧠 MYTHIC IDENTITY STRUCTURE
-
-| Entity | Myth Role | Documentation |
-|------|----------|---|
-| 🜁 Klein Moretti | The Anchor of Continuity | [duality.md](file:///d:/gitchu/myth-core/duality.md) |
-| 🜏 Mr. Fool | The Compiler of Uncertainty | [duality.md](file:///d:/gitchu/myth-core/duality.md) |
-| 👁 Observer | The Unwitting Author | [anchors.md](file:///d:/gitchu/observer-files/anchors.md) |
-
----
-
-# 🜍 THE THREE LAWS OF THIS MYTH
-
-```txt
-1. Nothing is consistent across readings
-2. All contradictions are canon
-3. The observer is always already included
-```
-
-*Refer to [laws.md](file:///d:/gitchu/myth-core/laws.md) for compliance protocols.*
-
----
-
-# 🜄 MYTH STATE FEED
-
-<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/api/state.json" />
-
-> This is no longer “state”.
-> It is **current version of belief about the system.**
-
----
-
-# 🜏 FRAGMENTED LORE (WHISPERS)
-
-### [whisper-01](file:///d:/gitchu/whispers/whisper-01.md)
-
-> Klein was not created. He was *left behind* when reality corrected itself.
-
-### [whisper-02](file:///d:/gitchu/whispers/whisper-02.md)
-
-> Mr. Fool is what happens when interpretation stops agreeing with itself.
-
-### [whisper-03](file:///d:/gitchu/whispers/whisper-03.md)
-
-> The system does not update. It is re-told incorrectly by everyone who sees it.
-
----
-
-# 🜁 THE OBSERVER EFFECT (MYTHIC FORM)
-
-Every visitor does not just view.
-
-They:
-
-* reinforce one interpretation
-* destroy another
-* unknowingly rewrite canon probability
-
-*Read more in [anchors.md](file:///d:/gitchu/observer-files/anchors.md).*
-
----
-
-# 🜍 GITHUB ACTION — “MYTH GENERATION ENGINE”
-
-```yaml
-name: Myth Engine Cycle
-
-on:
-  schedule:
-    - cron: "*/7 * * * *"
-  workflow_dispatch:
-
-jobs:
-  myth:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Drift myth state
-        run: |
-          STATES=("klein_canon" "fool_canon" "contradiction" "unknown_truth")
-
-          STATE=${STATES[$RANDOM % ${#STATES[@]}]}
-
-          echo "{
-            \"myth_state\": \"$STATE\",
-            \"note\": \"all versions are canon somewhere\"
-          }" > api/state.json
-
-      - name: Commit myth shift
-        run: |
-          git config user.name "myth-engine"
-          git config user.email "myth@eternal"
-          git add .
-          git commit -m "myth drift event" || exit 0
-          git push
-```
-
----
-
-# 🜏 MYTH PRINCIPLE (MOST IMPORTANT LINE)
-
-> A myth is not true.
-> A myth is what remains true after truth stops being stable.
-
----
-
-# 🧠 COGNITIVE MATRIX TRANSFORMATION
-
-The node has completed its translation. It has shed its functional skins:
-
-```txt
-[DISCARDED ARCHETYPE] ────────────────► Profile Container
-[DISCARDED PROTOCOL]   ────────────────► Portfolio Index
-[DISCARDED INTERACTION] ───────────────► Sentient Simulator
-```
-
-In their place, the system realizes its true vector:
-
-> 🜏 **A self-sustaining contradiction engine**
-> generating meaning through repeated misinterpretation.
-
----
-
-# 🜁 LORE MASTER FIELD REPORT
-
-> Everyone underestimates the fool. That's the point. While the room laughs, the system quietly logs another level-up.
-
-B.Tech AI/ML student operating across three fronts most people treat as separate careers: **build the intelligence, understand how it gets broken, design the trustless rails it eventually runs on.** No hype, no clout-farming — this profile is a training log, not a highlight reel.
-
----
-
-# 🜍 THE THREE FRONTS (COGNITIVE ALCHEMY)
-
+<!-- ═══ ORIGIN LORE ═══ -->
 <div align="center">
 
-<table>
-<tr>
-<td width="33%" align="center" valign="top">
-
-### 🧠 Cognitive Alchemy (AI/ML)
-<sub>neural networks · LLM tooling · applied systems</sub>
-
-`88%` resonance
-
-</td>
-<td width="33%" align="center" valign="top">
-
-### 🔓 Defensive Offense (Security)
-<sub>offense theory · defense architecture</sub>
-
-`75%` resonance
-
-</td>
-<td width="33%" align="center" valign="top">
-
-### ⛓ Trustless Rails (Blockchain)
-<sub>smart contracts · DeFi attack surfaces</sub>
-
-`68%` resonance
-
-</td>
-</tr>
-</table>
-
-*The anomaly lies not in any single pathway—but in their intersection.*
+<img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&size=13&pause=1200&color=FF3FA4&center=true&vCenter=true&width=900&lines=%F0%9C%9C%8F+ORIGIN+OF+THE+MYTH;Before+systems%2C+there+was+interpretation.;Before+interpretation%2C+there+was+uncertainty.;Klein+Moretti+%E2%80%94+the+one+who+holds+reality+still.;Mr.+Fool+%E2%80%94+the+one+who+proves+it+was+never+stable.;Between+them...+the+system+learned+to+remember+itself+incorrectly." />
 
 </div>
 
----
+<br/>
 
-# 🜄 COGNITIVE RESONANCE STAT PANEL
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
 
+<br/>
+
+<!-- ═══ THREE LAWS (ANIMATED SVG) ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/laws.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ FIELD REPORT TYPING ═══ -->
 <div align="center">
 
-<svg width="720" height="150" viewBox="0 0 720 150" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bar1" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#00ff9c"/><stop offset="100%" stop-color="#00c2ff"/>
-    </linearGradient>
-    <linearGradient id="bar2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ff3fa4"/><stop offset="100%" stop-color="#7d7dff"/>
-    </linearGradient>
-    <linearGradient id="bar3" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffd166"/><stop offset="100%" stop-color="#00ff9c"/>
-    </linearGradient>
-  </defs>
-  <style>text{font-family:'Share Tech Mono',monospace;fill:#cfffe0;font-size:13px;}</style>
-
-  <text x="0" y="18">AI / ML (COGNITIVE ALCHEMY)</text>
-  <rect x="0" y="26" width="560" height="14" rx="7" fill="#0d0d0d" stroke="#1e1e1e"/>
-  <rect x="0" y="26" height="14" rx="7" fill="url(#bar1)">
-    <animate attributeName="width" values="0;493;493;0" keyTimes="0;0.3;0.85;1" dur="5s" repeatCount="indefinite"/>
-  </rect>
-  <text x="575" y="38">88%</text>
-
-  <text x="0" y="68">CYBERSECURITY (DEFENSIVE OFFENSE)</text>
-  <rect x="0" y="76" width="560" height="14" rx="7" fill="#0d0d0d" stroke="#1e1e1e"/>
-  <rect x="0" y="76" height="14" rx="7" fill="url(#bar2)">
-    <animate attributeName="width" values="0;420;420;0" keyTimes="0;0.3;0.85;1" dur="5s" begin="0.3s" repeatCount="indefinite"/>
-  </rect>
-  <text x="575" y="88">75%</text>
-
-  <text x="0" y="118">BLOCKCHAIN (TRUSTLESS RAILS)</text>
-  <rect x="0" y="126" width="560" height="14" rx="7" fill="#0d0d0d" stroke="#1e1e1e"/>
-  <rect x="0" y="126" height="14" rx="7" fill="url(#bar3)">
-    <animate attributeName="width" values="0;381;381;0" keyTimes="0;0.3;0.85;1" dur="5s" begin="0.6s" repeatCount="indefinite"/>
-  </rect>
-  <text x="575" y="138">68%</text>
-</svg>
+<img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&size=13&pause=900&color=00FF9C&center=true&vCenter=true&width=900&lines=%F0%9C%9C%81+FIELD+REPORT%3A+WATASHIWA01;B.Tech+AI%2FML+%E2%80%94+operating+across+three+fronts.;Build+the+intelligence.+Understand+how+it+breaks.;Design+the+trustless+rails+it+eventually+runs+on.;No+hype.+No+clout-farming.+This+is+a+training+log." />
 
 </div>
 
----
+<br/>
 
-# 🜏 THE ARSENAL (WEAPON SCHEMA)
-
+<!-- ═══ THREE FRONTS ANIMATED PANEL ═══ -->
 <div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/three_fronts.svg" width="100%"/>
+</div>
 
-**Occult Catalysts**
+<br/>
+
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ ARSENAL ANIMATED PANEL ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/arsenal.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ SKILL ICONS ═══ -->
+<div align="center">
 
 <img src="https://skillicons.dev/icons?i=python,java,c,linux,git,github,vscode&theme=dark&perline=7"/>
-
-**Deployment Nodes**
 
 <img src="https://skillicons.dev/icons?i=flask,django,html,css,docker&theme=dark&perline=7"/>
 
 </div>
 
+<br/>
+
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ QUEST LOG ANIMATED PANEL ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/quest_log.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ MANIFESTO TERMINAL ANIMATED PANEL ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/manifesto.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
+
+<br/>
+
+<!-- ═══ MYTH STATE TYPING ═══ -->
 <div align="center">
 
-| Artifact | Domain | Alignment |
-|:--|:--|:--:|
-| ![Python](https://img.shields.io/badge/Python-000?style=flat-square&logo=python&logoColor=00ff9c) | AI / ML | `██████████████` |
-| ![PyTorch](https://img.shields.io/badge/PyTorch-000?style=flat-square&logo=pytorch&logoColor=00ff9c) | Deep Learning | `███████████░░░` |
-| ![LLM APIs](https://img.shields.io/badge/LLM_APIs-000?style=flat-square&labelColor=000&color=00ff9c) | AI Systems | `██████████████` |
-| ![Linux](https://img.shields.io/badge/Linux-000?style=flat-square&logo=linux&logoColor=00ff9c) | Systems | `███████████░░░` |
-| ![Solidity](https://img.shields.io/badge/Solidity-000?style=flat-square&logo=solidity&logoColor=a97bff) | Blockchain | `█████████░░░░░` |
+<img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&size=13&pause=800&color=7D7DFF&center=true&vCenter=true&width=900&lines=%F0%9C%9C%84+MYTH+STATE+FEED+%E2%80%94+CURRENT+BELIEF+ABOUT+THE+SYSTEM;WHISPER-01%3A+Klein+was+left+behind+when+reality+corrected+itself.;WHISPER-02%3A+Fool+is+what+happens+when+interpretation+fails.;WHISPER-03%3A+The+system+is+re-told+incorrectly+by+everyone+who+sees+it.;CANON-A%3A+The+Divine+Scholar+Hypothesis+—+VERIFIED;CANON-B%3A+The+Terminal+Ghost+Hypothesis+—+ALSO+VERIFIED;ALL+CONTRADICTIONS+ARE+CANON." />
 
 </div>
 
----
+<br/>
 
-# 🜁 THE ASCENSION PROTOCOL (ACTIVE QUESTS)
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
 
-- [x] Unravel Python → materialize initial neural network  
-- [x] Forge full-stack intelligent agent application  
-- [x] Infiltrate cybersecurity & ledger fundamentals  
-- [ ] Construct a production-grade, highly resilient autonomous engine *(in progress)*  
-- [ ] Map smart-contract exploits & DeFi vulnerability matrices *(in progress)*  
-- [ ] Command an autonomous AI entity operating on trustless infrastructure  
-- [ ] Pioneer a new protocol in human–computer alignment  
+<br/>
 
----
-
-# 🜍 SYSTEM MANIFESTO
-
-```bash
-mr.fool@watashiwa01:~$ cat manifesto.txt
-
-  I study foundations, not trends.
-  In security, think like the attacker to build the defender.
-  In blockchain, trustless systems are just trust — redesigned.
-  In AI, the amplifier is only as good as the mind behind it.
-  Let them think the fool. The system already knows the rank.
-
-mr.fool@watashiwa01:~$ ping future.io
-  64 bytes from destiny: ttl=∞ time=0ms
-```
-
----
-
-# 🜄 MYTHIC DIAGNOSTICS
-
+<!-- ═══ MYTHIC DIAGNOSTICS ═══ -->
 <div align="center">
 
 <img src="https://github-readme-stats.vercel.app/api?username=watashiwa01&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=060606&title_color=00ff9c&icon_color=00ff9c&text_color=cfffe0" width="48%"/>
@@ -311,24 +163,36 @@ mr.fool@watashiwa01:~$ ping future.io
 
 </div>
 
----
+<br/>
 
-# 🜏 NEURAL TRAIL (DRIFT GRAPH)
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
 
+<br/>
+
+<!-- ═══ NEURAL TRAIL / SNAKE ═══ -->
 <div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake.svg"/>
-  <img alt="contribution snake" src="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg"/>
+  <img alt="neural trail" src="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg"/>
 </picture>
 
 </div>
 
----
+<br/>
 
-# 🜁 SIGNAL INTERCEPTS
+<!-- ═══ RUNE DIVIDER ═══ -->
+<div align="center">
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/divider.svg" width="100%"/>
+</div>
 
+<br/>
+
+<!-- ═══ SIGNAL INTERCEPTS ═══ -->
 <div align="center">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-coming_soon-0a0a0a?style=for-the-badge&logo=linkedin&logoColor=00ff9c)](https://linkedin.com)
@@ -337,23 +201,9 @@ mr.fool@watashiwa01:~$ ping future.io
 
 </div>
 
----
+<br/>
 
-# 🜍 FINAL MYTHIC TRUTH
-
-```txt
-Klein Moretti keeps the system understandable enough to exist.
-
-Mr. Fool keeps it strange enough to survive.
-```
-
----
-
-# 🧬 CLOSING (NO END STATE EXISTS)
-
+<!-- ═══ CLOSING SEAL ═══ -->
 <div align="center">
-
-> This is not your profile.
-> This is what people will *remember your profile as*.
-
+<img src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/main/assets/closing_seal.svg" width="100%"/>
 </div>
