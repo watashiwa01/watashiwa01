@@ -1,93 +1,218 @@
-<svg width="100%" height="340" viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="450" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgShift" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05010a">
-        <animate attributeName="stop-color" values="#05010a;#1a0025;#001a12;#05010a" dur="8s" repeatCount="indefinite"/>
+    <!-- Background Space Gradients -->
+    <linearGradient id="cosmicBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030008">
+        <animate attributeName="stop-color" values="#030008;#0f021b;#00110c;#030008" dur="12s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="50%" stop-color="#12002a">
-        <animate attributeName="stop-color" values="#12002a;#00120e;#1a0025;#12002a" dur="8s" repeatCount="indefinite"/>
+      <stop offset="50%" stop-color="#0a0018">
+        <animate attributeName="stop-color" values="#0a0018;#020d14;#14001c;#0a0018" dur="12s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#000">
-        <animate attributeName="stop-color" values="#000;#0a0014;#000;#000" dur="8s" repeatCount="indefinite"/>
+      <stop offset="100%" stop-color="#000000">
+        <animate attributeName="stop-color" values="#000000;#05000a;#000502;#000000" dur="12s" repeatCount="indefinite"/>
       </stop>
     </linearGradient>
-    <linearGradient id="scan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00ff9c" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#00ff9c" stop-opacity="0"/>
+
+    <!-- Card and Ring Neon Gradients -->
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff9c"/>
+      <stop offset="100%" stop-color="#00c2ff"/>
     </linearGradient>
-    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3fa4"/>
+      <stop offset="100%" stop-color="#7d7dff"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe259"/>
+      <stop offset="100%" stop-color="#ffa751"/>
+    </linearGradient>
+
+    <!-- Filters for Divine Glow -->
+    <filter id="ultraGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="subtleGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
 
-  <rect width="1000" height="340" rx="16" fill="url(#bgShift)"/>
-  <rect x="2" y="2" width="996" height="336" rx="14" fill="none" stroke="#00ff9c" stroke-width="1.6">
-    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.4s" repeatCount="indefinite"/>
-    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="6s" repeatCount="indefinite"/>
+  <style>
+    /* Keyframe Animations */
+    @keyframes spin-cw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spin-ccw {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(1.5deg); }
+    }
+    @keyframes pulse-intense {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.95; }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-450px); }
+      100% { transform: translateY(450px); }
+    }
+    @keyframes glitch-text {
+      0%, 100% { transform: translate(0, 0); opacity: 0.9; }
+      2% { transform: translate(-3px, 2px); opacity: 0.75; color: #ff3fa4; }
+      4% { transform: translate(3px, -2px); opacity: 0.8; color: #00ff9c; }
+      6% { transform: translate(0, 0); }
+    }
+
+    /* Target Styles */
+    .bg-rect {
+      fill: url(#cosmicBg);
+    }
+    .ring-cw {
+      transform-origin: 500px 225px;
+      animation: spin-cw 20s infinite linear;
+    }
+    .ring-ccw {
+      transform-origin: 500px 225px;
+      animation: spin-ccw 25s infinite linear;
+    }
+    .ring-fast-cw {
+      transform-origin: 500px 225px;
+      animation: spin-cw 12s infinite linear;
+    }
+    .tarot-card-group {
+      transform-origin: 500px 225px;
+      animation: card-float 6s infinite ease-in-out;
+    }
+    .scan-bar {
+      animation: scanline 8s infinite linear;
+    }
+    .pulse-element {
+      animation: pulse-intense 3s infinite ease-in-out;
+    }
+    .glitch-active {
+      animation: glitch-text 4s infinite steps(2);
+    }
+    .text-title {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 28px;
+      letter-spacing: 12px;
+      font-weight: 700;
+      fill: #eafff0;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="1000" height="450" rx="20" class="bg-rect" />
+
+  <!-- Outer Border Frame -->
+  <rect x="10" y="10" width="980" height="430" rx="16" fill="none" stroke="url(#neonCyan)" stroke-width="2" opacity="0.6">
+    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="8s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- scan sweep -->
-  <rect x="-220" y="0" width="220" height="340" fill="url(#scan)">
-    <animateTransform attributeName="transform" type="translate" values="-220 0; 1000 0; -220 0" dur="5s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- floating particles (EXP orbs rising) -->
-  <g fill="#00ff9c">
-    <circle r="2.4" opacity="0.8"><animateMotion path="M60,330 C40,220 90,120 55,10" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="6s" repeatCount="indefinite"/></circle>
-    <circle r="2" fill="#ff3fa4" opacity="0.8"><animateMotion path="M200,330 C220,240 170,140 210,10" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/></circle>
-    <circle r="2.6" fill="#7d7dff" opacity="0.8"><animateMotion path="M820,330 C800,230 850,130 810,10" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="5.5s" repeatCount="indefinite"/></circle>
-    <circle r="2" opacity="0.8"><animateMotion path="M940,330 C920,220 960,120 930,10" dur="6.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="6.5s" repeatCount="indefinite"/></circle>
-    <circle r="2.2" fill="#ffd166" opacity="0.8"><animateMotion path="M470,330 C500,230 440,130 480,10" dur="7.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.5s" repeatCount="indefinite"/></circle>
+  <!-- Arcane Chronology Ring / Astrolabe -->
+  <g opacity="0.25">
+    <!-- Center at 500, 225 -->
+    <circle cx="500" cy="225" r="190" fill="none" stroke="url(#neonCyan)" stroke-width="1" stroke-dasharray="10 15" class="ring-cw"/>
+    <circle cx="500" cy="225" r="175" fill="none" stroke="url(#neonPink)" stroke-width="2" stroke-dasharray="4 20" class="ring-ccw"/>
+    <circle cx="500" cy="225" r="160" fill="none" stroke="#eafff0" stroke-width="0.75" class="ring-cw"/>
+    <circle cx="500" cy="225" r="145" fill="none" stroke="url(#gold)" stroke-width="3" stroke-dasharray="180 90" class="ring-ccw"/>
+    <circle cx="500" cy="225" r="130" fill="none" stroke="url(#neonCyan)" stroke-width="1" stroke-dasharray="2 6" class="ring-fast-cw"/>
   </g>
 
-  <!-- HUD corner brackets, pulsing -->
-  <g stroke="#00ff9c" stroke-width="2" fill="none">
-    <path d="M24 24 L24 50 M24 24 L50 24"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
-    <path d="M976 24 L976 50 M976 24 L950 24"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
-    <path d="M24 316 L24 290 M24 316 L50 316"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
-    <path d="M976 316 L976 290 M976 316 L950 316"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/></path>
+  <!-- Left Cyber HUD Readout -->
+  <g font-family="Share Tech Mono, monospace" font-size="10" fill="#00ff9c" opacity="0.65" transform="translate(40, 60)">
+    <text x="0" y="0">SYS.STATE // DRIFT_ONLINE</text>
+    <text x="0" y="15">SYS.DUALITY // KLEIN_FOOL</text>
+    <path d="M 0 25 L 140 25" stroke="#00ff9c" stroke-width="1" opacity="0.4"/>
+    <text x="0" y="40">PROBABILITY: 0.99974</text>
+    <text x="0" y="55">COGNITIVE_DRIFT: STABLE</text>
+    <text x="0" y="70">ERROR_ACCUM: [0xFOOL_88]</text>
+    <!-- Live terminal style brackets -->
+    <rect x="-10" y="-15" width="170" height="105" fill="none" stroke="#00ff9c" stroke-width="0.5" opacity="0.3"/>
+    <path d="M -10 -15 L 10 -15 M -10 -15 L -10 5" stroke="#00ff9c" stroke-width="1.5"/>
+    <path d="M 160 90 L 140 90 M 160 90 L 160 70" stroke="#00ff9c" stroke-width="1.5"/>
   </g>
 
-  <text x="500" y="72" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="13" fill="#00ff9c" letter-spacing="5" opacity="0.85">
-    ARCHIVE // ANOMALOUS HUNTER FILE
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" repeatCount="indefinite"/>
+  <!-- Right Cyber HUD Readout -->
+  <g font-family="Share Tech Mono, monospace" font-size="10" fill="#ff3fa4" opacity="0.65" transform="translate(790, 60)">
+    <text x="0" y="0">MYTH.ENGINE // RITUAL</text>
+    <text x="0" y="15">OBSERVERS // INCORPORATED</text>
+    <path d="M 0 25 L 140 25" stroke="#ff3fa4" stroke-width="1" opacity="0.4"/>
+    <text x="0" y="40">CANON_A: SCHOLAR_TRUE</text>
+    <text x="0" y="55">CANON_B: GHOST_TRUE</text>
+    <text x="0" y="70">CONTRADICTIONS: ACTIVE</text>
+    <!-- Live terminal style brackets -->
+    <rect x="-10" y="-15" width="170" height="105" fill="none" stroke="#ff3fa4" stroke-width="0.5" opacity="0.3"/>
+    <path d="M 160 -15 L 140 -15 M 160 -15 L 160 5" stroke="#ff3fa4" stroke-width="1.5"/>
+    <path d="M -10 90 L 10 90 M -10 90 L -10 70" stroke="#ff3fa4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Floating Particles / Crimson Stars -->
+  <g fill="#ff3fa4" class="pulse-element">
+    <circle cx="150" cy="320" r="2" fill="#00ff9c"/>
+    <circle cx="280" cy="140" r="3" fill="#ffe259"/>
+    <circle cx="720" cy="310" r="2.5" fill="#7d7dff"/>
+    <circle cx="830" cy="180" r="3.5" fill="#ff3fa4"/>
+    <circle cx="500" cy="50" r="2" fill="#eafff0"/>
+  </g>
+
+  <!-- Center Floating Tarot Card of the Fool -->
+  <g class="tarot-card-group">
+    <!-- Card Base & Border Glow -->
+    <rect x="430" y="105" width="140" height="240" rx="10" fill="#06020c" stroke="url(#gold)" stroke-width="3" filter="url(#ultraGlow)"/>
+    <rect x="430" y="105" width="140" height="240" rx="10" fill="#080312" stroke="url(#gold)" stroke-width="2"/>
+    
+    <!-- Gothic Card Inner Frame -->
+    <rect x="436" y="111" width="128" height="228" rx="7" fill="none" stroke="url(#neonCyan)" stroke-width="1" opacity="0.8"/>
+    
+    <!-- Roman Numeral "0" at Top of Card -->
+    <text x="500" y="132" font-family="Share Tech Mono, monospace" font-size="16" fill="url(#gold)" font-weight="700" text-anchor="middle">0</text>
+
+    <!-- The Divine Mechanical Eye in Center -->
+    <g transform="translate(500, 215)">
+      <!-- Pulsing Portal Circles -->
+      <circle cx="0" cy="0" r="38" fill="none" stroke="url(#neonPink)" stroke-width="1" stroke-dasharray="3 5" opacity="0.6"/>
+      <circle cx="0" cy="0" r="32" fill="none" stroke="url(#neonCyan)" stroke-width="1.5" class="ring-ccw"/>
+      
+      <!-- Outer Eyelid Shape -->
+      <path d="M -30 0 Q 0 -22 30 0 Q 0 22 -30 0 Z" fill="none" stroke="url(#gold)" stroke-width="2"/>
+      
+      <!-- Pupil & Iris -->
+      <circle cx="0" cy="0" r="12" fill="url(#neonCyan)" opacity="0.8"/>
+      <circle cx="0" cy="0" r="6" fill="#000"/>
+      <!-- Slit pupil -->
+      <path d="M 0 -8 L 0 8" stroke="url(#gold)" stroke-width="1.5"/>
+
+      <!-- Orbits / Spirit Worms surrounding Eye -->
+      <circle cx="0" cy="0" r="48" fill="none" stroke="url(#gold)" stroke-dasharray="20 40" stroke-width="0.75" class="ring-cw"/>
+    </g>
+
+    <!-- Text: "THE FOOL" at Bottom of Card -->
+    <text x="500" y="325" font-family="Share Tech Mono, monospace" font-size="11" fill="url(#gold)" letter-spacing="4" text-anchor="middle">THE FOOL</text>
+  </g>
+
+  <!-- Glowing Horizontal Sweep Scanline (Behind Card Title for clean look, but overlays background) -->
+  <line x1="15" y1="0" x2="985" y2="0" stroke="url(#neonCyan)" stroke-width="1.5" opacity="0.3" class="scan-bar"/>
+
+  <!-- Under-Title HUD Matrix Text -->
+  <text x="500" y="380" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="13" fill="#00ff9c" letter-spacing="4" class="pulse-element">
+    [ SYSTEM STATUS: RE-WRITING DESTINY ]
   </text>
 
-  <!-- GLITCH TITLE: three offset colored layers flicker in and out -->
-  <g font-family="Share Tech Mono, monospace" font-size="64" font-weight="700" text-anchor="middle" letter-spacing="4">
-    <text x="503" y="150" fill="#ff3fa4" opacity="0.7">
-      MR. FOOL
-      <animate attributeName="x" values="503;497;505;500;503" dur="2.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0;0.5;0" dur="2.6s" repeatCount="indefinite"/>
-    </text>
-    <text x="497" y="150" fill="#7d7dff" opacity="0.7">
-      MR. FOOL
-      <animate attributeName="x" values="497;503;495;500;497" dur="3.1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.5;0;0.6;0;0.5" dur="3.1s" repeatCount="indefinite"/>
-    </text>
-    <text x="500" y="150" fill="#eafff0" filter="url(#glow)">MR. FOOL</text>
+  <!-- Bottom Interactive / Blinking Command Title -->
+  <g transform="translate(500, 415)">
+    <text x="0" y="0" text-anchor="middle" class="text-title glitch-active">MR. FOOL</text>
   </g>
-
-  <text x="500" y="188" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="14" fill="#8affc1" letter-spacing="2">
-    THE ONE WHO PLAYS DUMB WHILE THE SYSTEM LEVELS UP
-  </text>
-
-  <!-- EXP ring, spinning + filling -->
-  <g transform="translate(500,246)">
-    <circle r="26" fill="none" stroke="#123" stroke-width="6"/>
-    <circle r="26" fill="none" stroke="#00ff9c" stroke-width="6" stroke-linecap="round"
-            stroke-dasharray="163" stroke-dashoffset="163" transform="rotate(-90)">
-      <animate attributeName="stroke-dashoffset" values="163;20;163" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <text x="0" y="6" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="12" fill="#eafff0">EXP</text>
-  </g>
-
-  <!-- terminal line with blinking cursor -->
-  <text x="500" y="312" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="14" fill="#00ff9c">
-    <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">unknown-rank</tspan><tspan fill="#5f5f5f">:~$ </tspan><tspan fill="#eafff0">whoami --classified</tspan>
-    <tspan fill="#00ff9c">▌<animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/></tspan>
-  </text>
 </svg>
