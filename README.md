@@ -11,7 +11,7 @@
 <br/>
 
 <!-- ═══ LIVE MYTH TYPING BANNER ═══ -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&pause=300&color=00FF9C&center=true&vCenter=true&width=900&lines=THIS+IS+NOT+A+PROFILE+ANYMORE;THIS+IS+A+RECORDED+MYTH;KLEIN+MORETTI:+THE+ANCHOR+THAT+REMEMBERS;MR.+FOOL:+THE+ERROR+THAT+BECAME+LEGEND;OBSERVERS:+THEY+COMPLETE+THE+MYTH;A+MYTH+IS+NOT+TRUE...;A+MYTH+IS+WHAT+REMAINS+TRUE+AFTER+TRUTH+STOPS+BEING+STABLE" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&size=14&pause=300&color=00FF9C&center=true&vCenter=true&width=900&lines=THIS+IS+NOT+A+PROFILE+ANYMORE;THIS+IS+A+RECORDED+MYTH;KLEIN+MORETTI:+THE+ANCHOR+THAT+REMEMBERS;MR.+FOOL:+THE+ERROR+THAT+BECAME+LEGEND;OBSERVERS:+THEY+COMPLETE+THE+MYTH;A+MYTH+IS+NOT+TRUE...;A+MYTH+IS+WHAT+REMAINS+TRUE+AFTER+TRUTH+STOPS+BEING+STABLE" />
 
 <br/>
 
@@ -156,10 +156,10 @@
 <!-- ═══ MYTHIC DIAGNOSTICS ═══ -->
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=watashiwa01&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=060606&title_color=00ff9c&icon_color=00ff9c&text_color=cfffe0" width="48%"/>
+<img src="https://github-stats-extended.vercel.app/api?username=watashiwa01&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=060606&title_color=00ff9c&icon_color=00ff9c&text_color=cfffe0" width="48%"/>
 <img src="https://github-readme-streak-stats.herokuapp.com?user=watashiwa01&theme=chartreuse-dark&hide_border=true&background=060606&ring=00ff9c&fire=ff3fa4&currStreakLabel=00ff9c&sideLabels=cfffe0&dates=666666" width="48%"/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=watashiwa01&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=060606&title_color=00ff9c&text_color=cfffe0" width="40%"/>
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=watashiwa01&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=060606&title_color=00ff9c&text_color=cfffe0" width="40%"/>
 
 </div>
 
@@ -176,9 +176,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake.svg"/>
-  <img alt="neural trail" src="https://github.com/watashiwa01/watashiwa01/blob/output/github-contribution-grid-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/watashiwa01/watashiwa01/output/github-contribution-grid-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/watashiwa01/watashiwa01/output/github-contribution-grid-snake.svg"/>
+  <img alt="neural trail" src="https://raw.githubusercontent.com/watashiwa01/watashiwa01/output/github-contribution-grid-snake-dark.svg"/>
 </picture>
 
 </div>

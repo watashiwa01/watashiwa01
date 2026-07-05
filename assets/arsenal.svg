@@ -1,114 +1,191 @@
-<svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="350" viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="arsenalBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#000"/>
-      <stop offset="100%" stop-color="#0a0018"/>
+      <stop offset="0%" stop-color="#020005"/>
+      <stop offset="50%" stop-color="#070014"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
-    <filter id="gArsenal">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+
+    <!-- Row Hover Gradients -->
+    <linearGradient id="rowHoverCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00ff9c" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="rowHoverPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3fa4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ff3fa4" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="rowHoverBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7d7dff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#7d7dff" stop-opacity="0.01"/>
+    </linearGradient>
+    <linearGradient id="rowHoverGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd166" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffd166" stop-opacity="0.01"/>
+    </linearGradient>
   </defs>
+
   <style>
     @keyframes scanH { 0%{transform:translateX(-900px)} 100%{transform:translateX(900px)} }
-    @keyframes rowGlow { 0%,100%{opacity:0.5} 50%{opacity:1} }
-    @keyframes barGrowA { 0%,100%{width:0} 25%,75%{width:280px} }
-    @keyframes barGrowB { 0%,100%{width:0} 25%,75%{width:245px} }
-    @keyframes barGrowC { 0%,100%{width:0} 25%,75%{width:280px} }
-    @keyframes barGrowD { 0%,100%{width:0} 25%,75%{width:245px} }
-    @keyframes barGrowE { 0%,100%{width:0} 25%,75%{width:210px} }
-    .scan-h { animation: scanH 5s infinite linear; }
+    @keyframes pulseDot { 0%,100%{opacity:0.3; transform:scale(0.8);} 50%{opacity:1; transform:scale(1.2);} }
+    
+    /* Reveal and slow pulse animations for bars */
+    @keyframes barPython { 0%{width:0px} 80%{width:280px} 90%{width:275px} 100%{width:280px} }
+    @keyframes barPyTorch { 0%{width:0px} 80%{width:235px} 90%{width:230px} 100%{width:235px} }
+    @keyframes barLLM { 0%{width:0px} 80%{width:280px} 90%{width:275px} 100%{width:280px} }
+    @keyframes barLinux { 0%{width:0px} 80%{width:246px} 90%{width:241px} 100%{width:246px} }
+    @keyframes barWeb { 0%{width:0px} 80%{width:224px} 90%{width:220px} 100%{width:224px} }
+    @keyframes barSolidity { 0%{width:0px} 80%{width:201px} 90%{width:196px} 100%{width:201px} }
+    @keyframes barJavaC { 0%{width:0px} 80%{width:238px} 90%{width:233px} 100%{width:238px} }
+    @keyframes barDocker { 0%{width:0px} 80%{width:210px} 90%{width:206px} 100%{width:210px} }
+
+    .scan-h { animation: scanH 6s infinite linear; }
+    .pulse-dot { animation: pulseDot 2s infinite ease-in-out; transform-origin: center; }
+    
+    .bar-py { animation: barPython 2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .bar-torch { animation: barPyTorch 2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards; }
+    .bar-llm { animation: barLLM 2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; }
+    .bar-lin { animation: barLinux 2s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards; }
+    .bar-web { animation: barWeb 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards; }
+    .bar-sol { animation: barSolidity 2s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards; }
+    .bar-jc { animation: barJavaC 2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards; }
+    .bar-dock { animation: barDocker 2s cubic-bezier(0.16, 1, 0.3, 1) 1.05s forwards; }
   </style>
 
-  <rect width="900" height="260" rx="16" fill="url(#arsenalBg)"/>
-  <rect x="1" y="1" width="898" height="258" rx="15" fill="none" stroke="#00ff9c" stroke-width="1" opacity="0.3">
-    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="6s" repeatCount="indefinite"/>
+  <!-- Container Base -->
+  <rect width="900" height="350" rx="16" fill="url(#arsenalBg)"/>
+  <rect x="1" y="1" width="898" height="348" rx="15" fill="none" stroke="#00ff9c" stroke-width="1.2" opacity="0.3">
+    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="8s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Horizontal scan sweep -->
-  <rect x="0" y="0" width="900" height="2" fill="#00ff9c" opacity="0.2" class="scan-h"/>
+  <!-- Horizontal scan sweep line -->
+  <rect x="0" y="0" width="900" height="2.5" fill="#00ff9c" opacity="0.15" class="scan-h"/>
 
   <!-- Title -->
-  <text x="450" y="35" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="13" fill="#00ff9c" letter-spacing="8">
-    THE ARSENAL — WEAPON SCHEMA
-    <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
-  </text>
-
-  <!-- Separator line -->
+  <g transform="translate(450, 35)">
+    <text text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="13" fill="#00ff9c" letter-spacing="8" font-weight="bold">
+      THE ARSENAL — WEAPON SCHEMA
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
   <line x1="30" y1="48" x2="870" y2="48" stroke="#00ff9c" stroke-width="0.5" opacity="0.3"/>
 
   <!-- Header row -->
-  <text x="50" y="68" font-family="Share Tech Mono,monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">ARTIFACT</text>
-  <text x="280" y="68" font-family="Share Tech Mono,monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">DOMAIN</text>
-  <text x="480" y="68" font-family="Share Tech Mono,monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">ALIGNMENT LEVEL</text>
+  <text x="60" y="68" font-family="Share Tech Mono, monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">ARTIFACT</text>
+  <text x="260" y="68" font-family="Share Tech Mono, monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">DOMAIN</text>
+  <text x="480" y="68" font-family="Share Tech Mono, monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">ALIGNMENT LEVEL</text>
+  <text x="815" y="68" font-family="Share Tech Mono, monospace" font-size="10" fill="#5f5f5f" letter-spacing="2">STATUS</text>
 
   <!-- Row 1: Python -->
-  <g>
-    <rect x="30" y="75" width="840" height="30" rx="4" fill="#00ff9c" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.08;0.03" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <text x="50" y="96" font-family="Share Tech Mono,monospace" font-size="12" fill="#00ff9c">Python</text>
-    <text x="280" y="96" font-family="Share Tech Mono,monospace" font-size="12" fill="#8affc1">AI / ML</text>
-    <rect x="480" y="85" width="290" height="8" rx="4" fill="#0d0d0d"/>
-    <rect x="480" y="85" height="8" rx="4" fill="#00ff9c">
-      <animate attributeName="width" values="0;280;280;0" keyTimes="0;0.2;0.8;1" dur="6s" repeatCount="indefinite"/>
-    </rect>
-    <text x="785" y="96" font-family="Share Tech Mono,monospace" font-size="10" fill="#00ff9c">100%</text>
+  <g transform="translate(30, 75)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverCyan)"/>
+    <rect width="4" height="28" fill="#00ff9c" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#00ff9c" font-weight="bold">Python</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#8affc1">AI / ML core</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#00ff9c" class="bar-py"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#00ff9c">100%</text>
+    <circle cx="795" cy="14" r="3" fill="#00ff9c" class="pulse-dot"/>
   </g>
 
   <!-- Row 2: PyTorch -->
-  <g>
-    <rect x="30" y="110" width="840" height="30" rx="4" fill="#ff3fa4" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.08;0.03" dur="3.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="50" y="131" font-family="Share Tech Mono,monospace" font-size="12" fill="#ff3fa4">PyTorch</text>
-    <text x="280" y="131" font-family="Share Tech Mono,monospace" font-size="12" fill="#ff9acb">Deep Learning</text>
-    <rect x="480" y="120" width="290" height="8" rx="4" fill="#0d0d0d"/>
-    <rect x="480" y="120" height="8" rx="4" fill="#ff3fa4">
-      <animate attributeName="width" values="0;245;245;0" keyTimes="0;0.2;0.8;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="785" y="131" font-family="Share Tech Mono,monospace" font-size="10" fill="#ff3fa4">84%</text>
+  <g transform="translate(30, 107)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverPink)"/>
+    <rect width="4" height="28" fill="#ff3fa4" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#ff3fa4" font-weight="bold">PyTorch</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#ff9acb">Deep Learning</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#ff3fa4" class="bar-torch"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#ff3fa4">84%</text>
+    <circle cx="795" cy="14" r="3" fill="#ff3fa4" class="pulse-dot"/>
   </g>
 
   <!-- Row 3: LLM APIs -->
-  <g>
-    <rect x="30" y="145" width="840" height="30" rx="4" fill="#00ff9c" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.08;0.03" dur="4s" repeatCount="indefinite"/>
-    </rect>
-    <text x="50" y="166" font-family="Share Tech Mono,monospace" font-size="12" fill="#00ff9c">LLM APIs</text>
-    <text x="280" y="166" font-family="Share Tech Mono,monospace" font-size="12" fill="#8affc1">AI Systems</text>
-    <rect x="480" y="155" width="290" height="8" rx="4" fill="#0d0d0d"/>
-    <rect x="480" y="155" height="8" rx="4" fill="#00ff9c">
-      <animate attributeName="width" values="0;280;280;0" keyTimes="0;0.2;0.8;1" dur="6s" begin="1s" repeatCount="indefinite"/>
-    </rect>
-    <text x="785" y="166" font-family="Share Tech Mono,monospace" font-size="10" fill="#00ff9c">100%</text>
+  <g transform="translate(30, 139)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverCyan)"/>
+    <rect width="4" height="28" fill="#00ff9c" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#00ff9c" font-weight="bold">LLM APIs</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#8affc1">Agent Systems</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#00ff9c" class="bar-llm"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#00ff9c">100%</text>
+    <circle cx="795" cy="14" r="3" fill="#00ff9c" class="pulse-dot"/>
   </g>
 
-  <!-- Row 4: Linux -->
-  <g>
-    <rect x="30" y="180" width="840" height="30" rx="4" fill="#7d7dff" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.08;0.03" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <text x="50" y="201" font-family="Share Tech Mono,monospace" font-size="12" fill="#7d7dff">Linux</text>
-    <text x="280" y="201" font-family="Share Tech Mono,monospace" font-size="12" fill="#b5b5ff">Systems</text>
-    <rect x="480" y="190" width="290" height="8" rx="4" fill="#0d0d0d"/>
-    <rect x="480" y="190" height="8" rx="4" fill="#7d7dff">
-      <animate attributeName="width" values="0;245;245;0" keyTimes="0;0.2;0.8;1" dur="6s" begin="1.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="785" y="201" font-family="Share Tech Mono,monospace" font-size="10" fill="#7d7dff">84%</text>
+  <!-- Row 4: Linux & Git -->
+  <g transform="translate(30, 171)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverBlue)"/>
+    <rect width="4" height="28" fill="#7d7dff" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#7d7dff" font-weight="bold">Linux / Git</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#b5b5ff">Systems Architecture</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#7d7dff" class="bar-lin"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#7d7dff">88%</text>
+    <circle cx="795" cy="14" r="3" fill="#7d7dff" class="pulse-dot"/>
   </g>
 
-  <!-- Row 5: Solidity -->
-  <g>
-    <rect x="30" y="215" width="840" height="30" rx="4" fill="#ffd166" opacity="0.04">
-      <animate attributeName="opacity" values="0.03;0.08;0.03" dur="4.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="50" y="236" font-family="Share Tech Mono,monospace" font-size="12" fill="#ffd166">Solidity</text>
-    <text x="280" y="236" font-family="Share Tech Mono,monospace" font-size="12" fill="#ffe9a0">Blockchain</text>
-    <rect x="480" y="225" width="290" height="8" rx="4" fill="#0d0d0d"/>
-    <rect x="480" y="225" height="8" rx="4" fill="#ffd166">
-      <animate attributeName="width" values="0;210;210;0" keyTimes="0;0.2;0.8;1" dur="6s" begin="2s" repeatCount="indefinite"/>
-    </rect>
-    <text x="785" y="236" font-family="Share Tech Mono,monospace" font-size="10" fill="#ffd166">72%</text>
+  <!-- Row 5: Flask / Django -->
+  <g transform="translate(30, 203)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverCyan)"/>
+    <rect width="4" height="28" fill="#00ff9c" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#00ff9c" font-weight="bold">Flask / Django</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#8affc1">Web Architectures</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#00ff9c" class="bar-web"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#00ff9c">80%</text>
+    <circle cx="795" cy="14" r="3" fill="#00ff9c" class="pulse-dot"/>
+  </g>
+
+  <!-- Row 6: Solidity -->
+  <g transform="translate(30, 235)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverGold)"/>
+    <rect width="4" height="28" fill="#ffd166" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#ffd166" font-weight="bold">Solidity</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#ffe9a0">Smart Contracts</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#ffd166" class="bar-sol"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#ffd166">72%</text>
+    <circle cx="795" cy="14" r="3" fill="#ffd166" class="pulse-dot"/>
+  </g>
+
+  <!-- Row 7: Java / C -->
+  <g transform="translate(30, 267)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverBlue)"/>
+    <rect width="4" height="28" fill="#7d7dff" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#7d7dff" font-weight="bold">Java / C</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#b5b5ff">Core Engineering</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#7d7dff" class="bar-jc"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#7d7dff">85%</text>
+    <circle cx="795" cy="14" r="3" fill="#7d7dff" class="pulse-dot"/>
+  </g>
+
+  <!-- Row 8: Docker -->
+  <g transform="translate(30, 299)">
+    <rect width="840" height="28" rx="4" fill="url(#rowHoverCyan)"/>
+    <rect width="4" height="28" fill="#00ff9c" rx="2"/>
+    <text x="30" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#00ff9c" font-weight="bold">Docker</text>
+    <text x="230" y="18" font-family="Share Tech Mono, monospace" font-size="12" fill="#8affc1">Virtualization</text>
+    
+    <rect x="450" y="8" width="280" height="8" rx="4" fill="#0b0713"/>
+    <rect x="450" y="8" height="8" rx="4" fill="#00ff9c" class="bar-dock"/>
+    
+    <text x="750" y="18" font-family="Share Tech Mono, monospace" font-size="11" fill="#00ff9c">75%</text>
+    <circle cx="795" cy="14" r="3" fill="#00ff9c" class="pulse-dot"/>
   </g>
 </svg>

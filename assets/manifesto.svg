@@ -1,66 +1,104 @@
-<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#000"/>
-      <stop offset="100%" stop-color="#001008"/>
+      <stop offset="0%" stop-color="#010003"/>
+      <stop offset="100%" stop-color="#001206"/>
     </linearGradient>
+    
+    <!-- Subtle CRTs scanline overlay -->
+    <pattern id="scanlinePattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000" opacity="0.18"/>
+    </pattern>
   </defs>
+
   <style>
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    @keyframes typeIn1 { 0%{opacity:0} 10%,100%{opacity:1} }
-    @keyframes typeIn2 { 0%,15%{opacity:0} 25%,100%{opacity:1} }
-    @keyframes typeIn3 { 0%,30%{opacity:0} 40%,100%{opacity:1} }
-    @keyframes typeIn4 { 0%,45%{opacity:0} 55%,100%{opacity:1} }
-    @keyframes typeIn5 { 0%,60%{opacity:0} 70%,100%{opacity:1} }
-    @keyframes typeIn6 { 0%,75%{opacity:0} 85%,100%{opacity:1} }
     @keyframes scanV { 0%{transform:translateY(-280px)} 100%{transform:translateY(280px)} }
-    .cursor { animation: blink 1s infinite step-end; }
-    .line1 { animation: typeIn1 6s infinite ease-out; }
-    .line2 { animation: typeIn2 6s infinite ease-out; }
-    .line3 { animation: typeIn3 6s infinite ease-out; }
-    .line4 { animation: typeIn4 6s infinite ease-out; }
-    .line5 { animation: typeIn5 6s infinite ease-out; }
-    .line6 { animation: typeIn6 6s infinite ease-out; }
-    .scan-v { animation: scanV 5s infinite linear; }
+    
+    /* 15s loop timing schema */
+    @keyframes type1  { 0%, 5% { opacity: 0; } 6%, 100% { opacity: 1; } }
+    @keyframes type2  { 0%, 12% { opacity: 0; } 13%, 100% { opacity: 1; } }
+    @keyframes type3  { 0%, 19% { opacity: 0; } 20%, 100% { opacity: 1; } }
+    @keyframes type4  { 0%, 26% { opacity: 0; } 27%, 100% { opacity: 1; } }
+    @keyframes type5  { 0%, 33% { opacity: 0; } 34%, 100% { opacity: 1; } }
+    @keyframes type6  { 0%, 40% { opacity: 0; } 41%, 100% { opacity: 1; } }
+    @keyframes type7  { 0%, 47% { opacity: 0; } 48%, 100% { opacity: 1; } }
+    @keyframes type8  { 0%, 54% { opacity: 0; } 55%, 100% { opacity: 1; } }
+    @keyframes type9  { 0%, 61% { opacity: 0; } 62%, 100% { opacity: 1; } }
+    @keyframes type10 { 0%, 68% { opacity: 0; } 69%, 100% { opacity: 1; } }
+    @keyframes type11 { 0%, 75% { opacity: 0; } 76%, 100% { opacity: 1; } }
+
+    .cursor { animation: blink 0.9s infinite step-end; }
+    .scan-v { animation: scanV 7s infinite linear; }
+    
+    .l1  { animation: type1 15s infinite ease-out; }
+    .l2  { animation: type2 15s infinite ease-out; }
+    .l3  { animation: type3 15s infinite ease-out; }
+    .l4  { animation: type4 15s infinite ease-out; }
+    .l5  { animation: type5 15s infinite ease-out; }
+    .l6  { animation: type6 15s infinite ease-out; }
+    .l7  { animation: type7 15s infinite ease-out; }
+    .l8  { animation: type8 15s infinite ease-out; }
+    .l9  { animation: type9 15s infinite ease-out; }
+    .l10 { animation: type10 15s infinite ease-out; }
+    .l11 { animation: type11 15s infinite ease-out; }
   </style>
 
   <rect width="900" height="280" rx="16" fill="url(#termBg)"/>
-  <rect x="1" y="1" width="898" height="278" rx="15" fill="none" stroke="#00ff9c" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Outer glowing green border -->
+  <rect x="1" y="1" width="898" height="278" rx="15" fill="none" stroke="#00ff9c" stroke-width="1.2" opacity="0.3"/>
 
-  <!-- Vertical scanline -->
-  <rect x="0" y="0" width="900" height="1" fill="#00ff9c" opacity="0.1" class="scan-v"/>
+  <!-- Vertical sweep scanline -->
+  <rect x="0" y="0" width="900" height="2.5" fill="#00ff9c" opacity="0.08" class="scan-v"/>
+  
+  <!-- CRT lines overlay -->
+  <rect width="900" height="280" rx="16" fill="url(#scanlinePattern)" pointer-events="none"/>
 
-  <!-- Terminal top bar -->
-  <rect x="0" y="0" width="900" height="38" rx="15" fill="#0a0a0a"/>
-  <rect x="0" y="25" width="900" height="13" fill="#0a0a0a"/>
-  <circle cx="28" cy="19" r="7" fill="#ff5f57"/>
-  <circle cx="52" cy="19" r="7" fill="#ffbd2e"/>
-  <circle cx="76" cy="19" r="7" fill="#28c840"/>
-  <text x="450" y="23" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="11" fill="#5f5f5f" letter-spacing="4">SYSTEM MANIFESTO — TERMINAL</text>
+  <!-- Terminal Top Bar -->
+  <rect x="0" y="0" width="900" height="38" rx="15" fill="#070707"/>
+  <rect x="0" y="25" width="900" height="13" fill="#070707"/>
+  <!-- Window buttons -->
+  <circle cx="28" cy="19" r="6" fill="#ff5f57"/>
+  <circle cx="48" cy="19" r="6" fill="#ffbd2e"/>
+  <circle cx="68" cy="19" r="6" fill="#28c840"/>
+  <!-- Bar Title -->
+  <text x="450" y="23" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="11" fill="#5f5f5f" letter-spacing="4">SYSTEM MANIFESTO — TERMINAL</text>
 
   <!-- Terminal Content -->
-  <g font-family="Share Tech Mono,monospace" font-size="12">
-    <!-- Prompt 1 -->
-    <text x="30" y="70" class="line1">
+  <g font-family="Share Tech Mono, monospace" font-size="12">
+    <!-- Line 1: Cat command -->
+    <text x="30" y="70" class="l1">
       <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">watashiwa01</tspan><tspan fill="#5f5f5f">:~$ </tspan><tspan fill="#eafff0">cat manifesto.txt</tspan>
     </text>
 
-    <!-- Manifesto lines -->
-    <text x="30" y="100" fill="#8affc1" class="line2">  I study foundations, not trends.</text>
-    <text x="30" y="122" fill="#8affc1" class="line3">  In security, think like the attacker to build the defender.</text>
-    <text x="30" y="144" fill="#8affc1" class="line4">  In blockchain, trustless systems are just trust — redesigned.</text>
-    <text x="30" y="166" fill="#8affc1" class="line5">  In AI, the amplifier is only as good as the mind behind it.</text>
-    <text x="30" y="188" fill="#00ff9c" class="line6">  Let them think the fool. The system already knows the rank.</text>
+    <!-- Line 2-5: Manifesto text lines -->
+    <text x="30" y="90" fill="#8affc1" class="l2">  I study foundations, not trends.</text>
+    <text x="30" y="108" fill="#8affc1" class="l3">  In security, think like the attacker to build the defender.</text>
+    <text x="30" y="126" fill="#8affc1" class="l4">  In blockchain, trustless rails are just trust — redesigned.</text>
+    <text x="30" y="144" fill="#8affc1" class="l5">  In AI, the amplifier is only as good as the mind behind it.</text>
 
-    <!-- Prompt 2 -->
-    <text x="30" y="218" class="line6">
+    <!-- Line 6: Sudo command -->
+    <text x="30" y="170" class="l6">
+      <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">watashiwa01</tspan><tspan fill="#5f5f5f">:~$ </tspan><tspan fill="#eafff0">sudo unlock --rank=FOOL</tspan>
+    </text>
+
+    <!-- Line 7: Password Prompt -->
+    <text x="30" y="188" fill="#eafff0" class="l7">  [sudo] password for mr.fool: **********</text>
+
+    <!-- Line 8: Unlock success -->
+    <text x="30" y="206" fill="#ffd166" class="l8">  [ACCESS GRANTED] Sequence 0: Mr. Fool unlocked.</text>
+
+    <!-- Line 9: Ping -->
+    <text x="30" y="230" class="l9">
       <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">watashiwa01</tspan><tspan fill="#5f5f5f">:~$ </tspan><tspan fill="#eafff0">ping future.io</tspan>
     </text>
 
-    <text x="30" y="244" fill="#00ff9c" class="line6">  64 bytes from destiny: ttl=∞  time=0ms</text>
+    <!-- Line 10: Ping response -->
+    <text x="30" y="248" fill="#00ff9c" class="l10">  64 bytes from destiny: ttl=∞  time=0ms</text>
 
-    <!-- Final Prompt with blinking cursor -->
-    <text x="30" y="268">
+    <!-- Line 11: Final Prompt with blinking cursor -->
+    <text x="30" y="268" class="l11">
       <tspan fill="#7d7dff">mr.fool</tspan><tspan fill="#5f5f5f">@</tspan><tspan fill="#ff3fa4">watashiwa01</tspan><tspan fill="#5f5f5f">:~$ </tspan>
       <tspan fill="#00ff9c" class="cursor">█</tspan>
     </text>
