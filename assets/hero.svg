@@ -1,304 +1,191 @@
-<svg width="100%" height="480" viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+<svg width="1000" height="420" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background Space Gradients -->
-    <linearGradient id="cosmicBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#020005">
-        <animate attributeName="stop-color" values="#020005;#0a0114;#000806;#020005" dur="15s" repeatCount="indefinite"/>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050008">
+        <animate attributeName="stop-color" values="#050008;#0f0018;#08000a;#050008" dur="10s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="50%" stop-color="#060010">
-        <animate attributeName="stop-color" values="#060010;#01080c;#0c0012;#060010" dur="15s" repeatCount="indefinite"/>
+      <stop offset="50%" stop-color="#0d0015">
+        <animate attributeName="stop-color" values="#0d0015;#05000a;#120018;#0d0015" dur="10s" repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" stop-color="#000000">
-        <animate attributeName="stop-color" values="#000000;#030006;#000301;#000000" dur="15s" repeatCount="indefinite"/>
-      </stop>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
-
-    <!-- Card and Ring Neon Gradients -->
-    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ff9c"/>
-      <stop offset="50%" stop-color="#00d5ff"/>
-      <stop offset="100%" stop-color="#0088ff"/>
-    </linearGradient>
-    <linearGradient id="neonPink" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff3fa4"/>
-      <stop offset="50%" stop-color="#ff0055"/>
-      <stop offset="100%" stop-color="#7d7dff"/>
-    </linearGradient>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffe259"/>
-      <stop offset="50%" stop-color="#ffa751"/>
-      <stop offset="100%" stop-color="#ff6a00"/>
-    </linearGradient>
-    <linearGradient id="matrixStream" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00ff9c" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00ff9c" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#ff3fa4" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Filters for Divine Glow -->
-    <filter id="ultraGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"/>
-      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <radialGradient id="centerGlow" cx="50%" cy="47%" r="35%">
+      <stop offset="0%" stop-color="#6a0dad" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glowCrimson" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glowPurple" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowGold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
   <style>
-    /* Keyframe Animations */
-    @keyframes spin-cw {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes borderCycle { 0%,100%{stroke:#6a0dad;opacity:0.6} 33%{stroke:#dc143c;opacity:0.9} 66%{stroke:#4b0082;opacity:0.5} }
+    @keyframes geassOuter { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes geassInner { from{transform:rotate(360deg)} to{transform:rotate(0deg)} }
+    @keyframes eyePulse { 0%,100%{opacity:0.1} 50%{opacity:0.35} }
+    @keyframes titleGlitch {
+      0%,88%,100%{transform:translate(0,0);opacity:1}
+      89%{transform:translate(-5px,2px);opacity:0.75}
+      91%{transform:translate(5px,-3px);opacity:0.85}
+      93%{transform:translate(-3px,1px);opacity:0.9}
+      95%{transform:translate(3px,-1px);opacity:0.8}
+      97%{transform:translate(0,0);opacity:1}
     }
-    @keyframes spin-ccw {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-    @keyframes card-float {
-      0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-      50% { transform: translateY(-15px) rotate(2deg) scale(1.02); }
-    }
-    @keyframes pulse-intense {
-      0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 2px #00ff9c); }
-      50% { opacity: 0.95; filter: drop-shadow(0 0 12px #00ff9c); }
-    }
-    @keyframes pulse-pink {
-      0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 2px #ff3fa4); }
-      50% { opacity: 0.95; filter: drop-shadow(0 0 12px #ff3fa4); }
-    }
-    @keyframes scanline {
-      0% { transform: translateY(-480px); }
-      100% { transform: translateY(480px); }
-    }
-    @keyframes glitch-text {
-      0%, 100% { transform: translate(0, 0); opacity: 0.9; text-shadow: 1px 1px #00ff9c, -1px -1px #ff3fa4; }
-      2% { transform: translate(-3px, 2px); opacity: 0.75; text-shadow: 3px -1px #00ff9c, -2px 2px #7d7dff; }
-      4% { transform: translate(3px, -2px); opacity: 0.8; text-shadow: -2px 3px #ff3fa4, 2px -1px #00ff9c; }
-      6% { transform: translate(0, 0); text-shadow: none; }
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(0.8); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-    @keyframes worm-drift {
-      0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -200; }
-    }
-    @keyframes digital-rain {
-      0% { stroke-dashoffset: 400; }
-      100% { stroke-dashoffset: 0; }
-    }
+    @keyframes scanH { 0%{transform:translateY(-430px)} 100%{transform:translateY(430px)} }
+    @keyframes scanV { 0%{transform:translateX(-1010px)} 100%{transform:translateX(1010px)} }
+    @keyframes chessFloat1 { 0%,100%{transform:translateY(0) rotate(0deg);opacity:0.18} 50%{transform:translateY(-14px) rotate(4deg);opacity:0.45} }
+    @keyframes chessFloat2 { 0%,100%{transform:translateY(0) rotate(0deg);opacity:0.15} 50%{transform:translateY(-10px) rotate(-5deg);opacity:0.4} }
+    @keyframes chessFloat3 { 0%,100%{transform:translateY(0) rotate(0deg);opacity:0.12} 50%{transform:translateY(-18px) rotate(6deg);opacity:0.35} }
+    @keyframes roseFloat1 { 0%{transform:translateY(0) rotate(0deg) scale(1);opacity:0} 5%{opacity:0.7} 90%{opacity:0.3} 100%{transform:translateY(-380px) rotate(200deg) scale(0.5);opacity:0} }
+    @keyframes roseFloat2 { 0%{transform:translateY(0) rotate(20deg) scale(0.8);opacity:0} 8%{opacity:0.5} 92%{opacity:0.2} 100%{transform:translateY(-400px) rotate(-160deg) scale(0.3);opacity:0} }
+    @keyframes hudFlicker { 0%,100%{opacity:0.5} 50%{opacity:0.9} }
+    @keyframes subtitlePulse { 0%,100%{opacity:0.55} 50%{opacity:1} }
+    @keyframes gridScroll { 0%{transform:perspective(500px) rotateX(45deg) translateY(0)} 100%{transform:perspective(500px) rotateX(45deg) translateY(-60px)} }
+    @keyframes signaturePulse { 0%,100%{opacity:0.35} 50%{opacity:0.75} }
 
-    /* Target Styles */
-    .bg-rect {
-      fill: url(#cosmicBg);
-    }
-    .ring-cw {
-      transform-origin: 500px 240px;
-      animation: spin-cw 25s infinite linear;
-    }
-    .ring-ccw {
-      transform-origin: 500px 240px;
-      animation: spin-ccw 30s infinite linear;
-    }
-    .ring-fast-cw {
-      transform-origin: 500px 240px;
-      animation: spin-cw 15s infinite linear;
-    }
-    .ring-fast-ccw {
-      transform-origin: 500px 240px;
-      animation: spin-ccw 18s infinite linear;
-    }
-    .tarot-card-group {
-      transform-origin: 500px 240px;
-      animation: card-float 7s infinite ease-in-out;
-    }
-    .scan-bar {
-      animation: scanline 9s infinite linear;
-    }
-    .pulse-element {
-      animation: pulse-intense 4s infinite ease-in-out;
-    }
-    .pulse-pink-el {
-      animation: pulse-pink 3s infinite ease-in-out;
-    }
-    .glitch-active {
-      animation: glitch-text 5s infinite steps(2);
-    }
-    .text-title {
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 32px;
-      letter-spacing: 16px;
-      font-weight: 700;
-      fill: #eafff0;
-    }
-    .star {
-      animation: twinkle 4s infinite ease-in-out;
-      transform-origin: center;
-    }
-    .worm {
-      stroke-dasharray: 40 80;
-      animation: worm-drift 8s infinite linear;
-    }
-    .rain-line {
-      stroke-dasharray: 100 300;
-      animation: digital-rain 6s infinite linear;
-    }
+    .border-animate { animation: borderCycle 5s infinite ease-in-out; }
+    .geass-outer { transform-origin: 500px 195px; animation: geassOuter 35s infinite linear; }
+    .geass-inner { transform-origin: 500px 195px; animation: geassInner 22s infinite linear; }
+    .eye-bg { animation: eyePulse 5s infinite ease-in-out; }
+    .title-main { animation: titleGlitch 6s infinite; }
+    .scan-h { animation: scanH 8s infinite linear; }
+    .scan-v { animation: scanV 12s infinite linear; }
+    .cf1 { animation: chessFloat1 5s infinite ease-in-out; }
+    .cf2 { animation: chessFloat2 6.5s infinite ease-in-out 1.5s; }
+    .cf3 { animation: chessFloat3 8s infinite ease-in-out 3s; }
+    .rose1 { transform-origin: 70px 420px; animation: roseFloat1 10s infinite ease-in-out; }
+    .rose2 { transform-origin: 930px 420px; animation: roseFloat2 13s infinite ease-in-out 3s; }
+    .rose3 { transform-origin: 200px 420px; animation: roseFloat1 15s infinite ease-in-out 6s; }
+    .rose4 { transform-origin: 800px 420px; animation: roseFloat2 11s infinite ease-in-out 8s; }
+    .hud { animation: hudFlicker 2.5s infinite ease-in-out; }
+    .subtitle { animation: subtitlePulse 3s infinite ease-in-out; }
+    .grid-scroll { animation: gridScroll 4s infinite linear; }
+    .sig { animation: signaturePulse 4s infinite ease-in-out; }
   </style>
 
-  <!-- Background -->
-  <rect width="1000" height="480" rx="20" class="bg-rect" />
+  <!-- Base background -->
+  <rect width="1000" height="420" fill="url(#bgGrad)"/>
+  <!-- Center radial glow -->
+  <rect width="1000" height="420" fill="url(#centerGlow)"/>
 
-  <!-- Star Field (Static and Twinkling) -->
-  <g opacity="0.6">
-    <circle cx="100" cy="80" r="1" fill="#fff" class="star" style="animation-delay: 0.5s;" />
-    <circle cx="200" cy="180" r="1.5" fill="#fff" class="star" style="animation-delay: 2s;" />
-    <circle cx="150" cy="350" r="1" fill="#00ff9c" class="star" style="animation-delay: 1.2s;" />
-    <circle cx="280" cy="90" r="2" fill="#ffd166" class="star" style="animation-delay: 3s;" />
-    <circle cx="320" cy="380" r="1" fill="#fff" class="star" style="animation-delay: 0.8s;" />
-    <circle cx="720" cy="120" r="1.5" fill="#ff3fa4" class="star" style="animation-delay: 2.5s;" />
-    <circle cx="850" cy="80" r="1" fill="#fff" class="star" style="animation-delay: 1.7s;" />
-    <circle cx="880" cy="320" r="2" fill="#00ff9c" class="star" style="animation-delay: 0.2s;" />
-    <circle cx="920" cy="190" r="1.5" fill="#ffd166" class="star" style="animation-delay: 3.5s;" />
-    <circle cx="680" cy="360" r="1" fill="#fff" class="star" style="animation-delay: 1.5s;" />
-    <circle cx="780" cy="400" r="1.5" fill="#7d7dff" class="star" style="animation-delay: 2.1s;" />
+  <!-- Perspective chess grid floor -->
+  <g class="grid-scroll" opacity="0.08">
+    <line x1="500" y1="265" x2="-100" y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="50"   y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="180"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="300"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="400"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="500"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="600"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="700"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="820"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="950"  y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="500" y1="265" x2="1100" y2="420" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="-200" y1="310" x2="1200" y2="310" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="-200" y1="340" x2="1200" y2="340" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="-200" y1="365" x2="1200" y2="365" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="-200" y1="388" x2="1200" y2="388" stroke="#6a0dad" stroke-width="0.6"/>
+    <line x1="-200" y1="408" x2="1200" y2="408" stroke="#6a0dad" stroke-width="0.6"/>
   </g>
 
-  <!-- Vertical Digital Rain Background Strips -->
-  <g opacity="0.15">
-    <line x1="80" y1="0" x2="80" y2="480" stroke="url(#matrixStream)" stroke-width="1.5" class="rain-line" />
-    <line x1="180" y1="0" x2="180" y2="480" stroke="url(#matrixStream)" stroke-width="1" class="rain-line" style="animation-delay: 2s; animation-duration: 4s;" />
-    <line x1="820" y1="0" x2="820" y2="480" stroke="url(#matrixStream)" stroke-width="1" class="rain-line" style="animation-delay: 1s; animation-duration: 5s;" />
-    <line x1="910" y1="0" x2="910" y2="480" stroke="url(#matrixStream)" stroke-width="1.5" class="rain-line" style="animation-delay: 3s; animation-duration: 7s;" />
+  <!-- Outer border -->
+  <rect x="8" y="8" width="984" height="404" rx="18" fill="none" stroke="#6a0dad" stroke-width="2" class="border-animate"/>
+  <!-- Inner border -->
+  <rect x="18" y="18" width="964" height="384" rx="12" fill="none" stroke="#8b0000" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- Scanlines -->
+  <rect x="18" y="0" width="964" height="1.2" fill="#dc143c" opacity="0.15" class="scan-h"/>
+  <rect x="0" y="18" width="1.2" height="384" fill="#6a0dad" opacity="0.12" class="scan-v"/>
+
+  <!-- Large background Geass eye rings -->
+  <g class="eye-bg">
+    <circle cx="500" cy="195" r="145" fill="none" stroke="#6a0dad" stroke-width="1.2" stroke-dasharray="12 18" class="geass-outer"/>
+    <circle cx="500" cy="195" r="120" fill="none" stroke="#dc143c" stroke-width="0.8" stroke-dasharray="5 15" class="geass-inner"/>
+    <circle cx="500" cy="195" r="95" fill="none" stroke="#4b0082" stroke-width="0.5" class="geass-outer"/>
+    <!-- Geass V symbol -->
+    <path d="M 500 110 L 455 195 L 500 215 L 545 195 Z" fill="none" stroke="#dc143c" stroke-width="1.5" class="geass-inner" opacity="0.4"/>
   </g>
 
-  <!-- Outer Border Frame -->
-  <rect x="10" y="10" width="980" height="460" rx="16" fill="none" stroke="url(#neonCyan)" stroke-width="2.5" opacity="0.6">
-    <animate attributeName="stroke" values="#00ff9c;#ff3fa4;#7d7dff;#00ff9c" dur="10s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- Arcane Chronology Ring / Astrolabe -->
-  <g opacity="0.35">
-    <circle cx="500" cy="240" r="215" fill="none" stroke="url(#neonCyan)" stroke-width="1" stroke-dasharray="12 18" class="ring-cw"/>
-    <circle cx="500" cy="240" r="195" fill="none" stroke="url(#neonPink)" stroke-width="2" stroke-dasharray="6 24" class="ring-ccw"/>
-    <!-- Orbiting Rune Glyphs -->
-    <g class="ring-cw">
-      <text x="500" y="40" font-family="Share Tech Mono, monospace" font-size="10" fill="#00ff9c" text-anchor="middle">🜏</text>
-      <text x="690" y="245" font-family="Share Tech Mono, monospace" font-size="10" fill="#00ff9c" text-anchor="middle">🜁</text>
-      <text x="500" y="445" font-family="Share Tech Mono, monospace" font-size="10" fill="#ff3fa4" text-anchor="middle">🜎</text>
-      <text x="310" y="245" font-family="Share Tech Mono, monospace" font-size="10" fill="#ff3fa4" text-anchor="middle">🜍</text>
-    </g>
-    <circle cx="500" cy="240" r="175" fill="none" stroke="#eafff0" stroke-width="0.75" class="ring-ccw"/>
-    <circle cx="500" cy="240" r="160" fill="none" stroke="url(#gold)" stroke-width="3" stroke-dasharray="180 90" class="ring-cw"/>
-    <circle cx="500" cy="240" r="145" fill="none" stroke="url(#neonCyan)" stroke-width="1.5" stroke-dasharray="3 9" class="ring-fast-ccw"/>
+  <!-- Corner HUD left -->
+  <g class="hud" transform="translate(36,38)" font-family="Share Tech Mono,monospace" font-size="9.5" fill="#6a0dad">
+    <path d="M 0 0 L 0 22 M 0 0 L 22 0" stroke="#6a0dad" stroke-width="1.8" fill="none"/>
+    <text x="6"  y="36">OPERATION.ZERO</text>
+    <text x="6"  y="50">GEASS // ABSOLUTE</text>
+    <text x="6"  y="64">STRATEGY // LOADED</text>
+    <line x1="0" y1="72" x2="128" y2="72" stroke="#6a0dad" stroke-width="0.5" opacity="0.4"/>
+    <text x="6"  y="84" fill="#8b0000">EMPEROR // TARGET</text>
   </g>
 
-  <!-- Left Cyber HUD Readout (Klein / Duality) -->
-  <g font-family="Share Tech Mono, monospace" font-size="11" fill="#00ff9c" opacity="0.75" transform="translate(45, 75)">
-    <text x="0" y="0" font-weight="bold" fill="#eafff0">SYS.STATE // DRIFT_ONLINE</text>
-    <text x="0" y="16">SYS.DUALITY // KLEIN_FOOL</text>
-    <path d="M 0 25 L 155 25" stroke="#00ff9c" stroke-width="1.5" opacity="0.6"/>
-    <text x="0" y="42">PROBABILITY: 0.999781</text>
-    <text x="0" y="58">COGNITIVE_DRIFT: STABLE</text>
-    <text x="0" y="74">ERROR_ACCUM: [0xFOOL_88]</text>
-    <text x="0" y="90">RUNE_LOCK: DECRYPTED</text>
-    <text x="0" y="106" fill="#7d7dff">SEQUENCE_PHASE: V</text>
-    
-    <!-- Live terminal style brackets -->
-    <rect x="-12" y="-18" width="185" height="142" fill="none" stroke="#00ff9c" stroke-width="0.75" opacity="0.4"/>
-    <path d="M -12 -18 L 12 -18 M -12 -18 L -12 12" stroke="#00ff9c" stroke-width="2"/>
-    <path d="M 173 124 L 173 104 M 173 124 L 149 124" stroke="#00ff9c" stroke-width="2"/>
-    
-    <!-- Pulse diagnostic dot -->
-    <circle cx="150" cy="-3" r="3" fill="#00ff9c" class="pulse-element"/>
+  <!-- Corner HUD right -->
+  <g class="hud" transform="translate(836,38)" font-family="Share Tech Mono,monospace" font-size="9.5" fill="#8b0000">
+    <path d="M 128 0 L 128 22 M 128 0 L 106 0" stroke="#8b0000" stroke-width="1.8" fill="none"/>
+    <text x="0"  y="36">RANK // DEMON KING</text>
+    <text x="0"  y="50">PIECES.LOST // ZERO</text>
+    <text x="0"  y="64">MOVES.AHEAD // ∞</text>
+    <line x1="0" y1="72" x2="128" y2="72" stroke="#8b0000" stroke-width="0.5" opacity="0.4"/>
+    <text x="0"  y="84" fill="#6a0dad">ENDGAME // CERTAIN</text>
   </g>
 
-  <!-- Right Cyber HUD Readout (Fool / Ritual) -->
-  <g font-family="Share Tech Mono, monospace" font-size="11" fill="#ff3fa4" opacity="0.75" transform="translate(770, 75)">
-    <text x="0" y="0" font-weight="bold" fill="#eafff0">MYTH.ENGINE // ACTIVE</text>
-    <text x="0" y="16">OBSERVERS // DETECTED</text>
-    <path d="M 0 25 L 155 25" stroke="#ff3fa4" stroke-width="1.5" opacity="0.6"/>
-    <text x="0" y="42">CANON_A: SCHOLAR_TRUE</text>
-    <text x="0" y="58">CANON_B: GHOST_TRUE</text>
-    <text x="0" y="74">CONTRADICTIONS: UNLOCKED</text>
-    <text x="0" y="90">DIVINE_RESONANCE: 94.6%</text>
-    <text x="0" y="106" fill="#ffd166">COGNITIVE_GEAS: OFF</text>
-    
-    <!-- Live terminal style brackets -->
-    <rect x="-12" y="-18" width="185" height="142" fill="none" stroke="#ff3fa4" stroke-width="0.75" opacity="0.4"/>
-    <path d="M 173 -18 L 149 -18 M 173 -18 L 173 12" stroke="#ff3fa4" stroke-width="2"/>
-    <path d="M -12 124 L -12 104 M -12 124 L 12 124" stroke="#ff3fa4" stroke-width="2"/>
-    
-    <!-- Pulse diagnostic dot -->
-    <circle cx="150" cy="-3" r="3" fill="#ff3fa4" class="pulse-pink-el"/>
+  <!-- Bottom corner brackets -->
+  <g stroke="#6a0dad" stroke-width="1.8" fill="none" opacity="0.6">
+    <path d="M 36 392 L 36 370 M 36 392 L 58 392"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.9s" repeatCount="indefinite"/></path>
+    <path d="M 964 392 L 964 370 M 964 392 L 942 392"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.3s" repeatCount="indefinite"/></path>
   </g>
 
-  <!-- Center Floating Tarot Card of the Fool -->
-  <g class="tarot-card-group">
-    <!-- Card Outer Shadow / Border Glow -->
-    <rect x="425" y="100" width="150" height="260" rx="12" fill="#030107" stroke="url(#gold)" stroke-width="3" filter="url(#ultraGlow)"/>
-    <rect x="425" y="100" width="150" height="260" rx="12" fill="#070312" stroke="url(#gold)" stroke-width="2"/>
-    
-    <!-- Gothic Card Inner Frame -->
-    <rect x="432" y="107" width="136" height="246" rx="9" fill="none" stroke="url(#neonCyan)" stroke-width="1" opacity="0.8"/>
-    
-    <!-- Micro HUD metrics on the card border -->
-    <line x1="432" y1="125" x2="442" y2="125" stroke="url(#gold)" stroke-width="1"/>
-    <line x1="558" y1="125" x2="568" y2="125" stroke="url(#gold)" stroke-width="1"/>
-    <line x1="432" y1="325" x2="442" y2="325" stroke="url(#gold)" stroke-width="1"/>
-    <line x1="558" y1="325" x2="568" y2="325" stroke="url(#gold)" stroke-width="1"/>
+  <!-- Floating chess pieces -->
+  <text x="100"  y="230" font-family="serif" font-size="52" fill="#4b0082" class="cf1" filter="url(#glowPurple)">♔</text>
+  <text x="855"  y="210" font-family="serif" font-size="38" fill="#6a0dad" class="cf2" filter="url(#glowPurple)">♞</text>
+  <text x="135"  y="330" font-family="serif" font-size="30" fill="#8b0000" class="cf3">♜</text>
+  <text x="815"  y="320" font-family="serif" font-size="34" fill="#4b0082" class="cf1">♛</text>
 
-    <!-- Roman Numeral "0" at Top of Card -->
-    <text x="500" y="130" font-family="Share Tech Mono, monospace" font-size="18" fill="url(#gold)" font-weight="700" text-anchor="middle" letter-spacing="2">0</text>
-
-    <!-- The Divine Mechanical Eye in Center -->
-    <g transform="translate(500, 220)">
-      <!-- Portal concentric rings -->
-      <circle cx="0" cy="0" r="44" fill="none" stroke="url(#neonPink)" stroke-width="0.75" stroke-dasharray="4 8" opacity="0.5"/>
-      <circle cx="0" cy="0" r="38" fill="none" stroke="url(#neonCyan)" stroke-width="1.5" class="ring-ccw"/>
-      <circle cx="0" cy="0" r="30" fill="none" stroke="url(#gold)" stroke-width="1" stroke-dasharray="20 10" class="ring-cw"/>
-      
-      <!-- Outer Eyelid Shape -->
-      <path d="M -32 0 Q 0 -24 32 0 Q 0 24 -32 0 Z" fill="none" stroke="url(#gold)" stroke-width="2.5" filter="url(#subtleGlow)"/>
-      
-      <!-- Pupil & Iris -->
-      <circle cx="0" cy="0" r="14" fill="url(#neonCyan)" opacity="0.8"/>
-      <circle cx="0" cy="0" r="7" fill="#020008"/>
-      <!-- Slit pupil -->
-      <path d="M 0 -9 L 0 9" stroke="url(#gold)" stroke-width="2"/>
-
-      <!-- Spirit Worms / Energy waves surrounding Eye -->
-      <path d="M -50 -10 Q -25 -45 0 -10 T 50 -10" fill="none" stroke="url(#neonPink)" stroke-width="1" class="worm" opacity="0.7" />
-      <path d="M -50 10 Q -25 45 0 10 T 50 10" fill="none" stroke="url(#neonCyan)" stroke-width="1" class="worm" style="animation-delay: -4s;" opacity="0.7" />
-    </g>
-
-    <!-- Text: "THE FOOL" at Bottom of Card -->
-    <rect x="445" y="315" width="110" height="20" rx="3" fill="#040108" stroke="url(#gold)" stroke-width="0.5" opacity="0.8"/>
-    <text x="500" y="329" font-family="Share Tech Mono, monospace" font-size="11" fill="url(#gold)" letter-spacing="4" text-anchor="middle" font-weight="bold">THE FOOL</text>
-  </g>
-
-  <!-- Glowing Horizontal Sweep Scanline (Behind Card Title for clean look) -->
-  <line x1="15" y1="0" x2="985" y2="0" stroke="url(#neonCyan)" stroke-width="2" opacity="0.4" class="scan-bar"/>
-
-  <!-- Under-Title HUD Matrix Text -->
-  <g transform="translate(500, 395)">
-    <text x="0" y="0" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="13" fill="#00ff9c" letter-spacing="6" class="pulse-element">
-      [ SYSTEM STATUS: RE-WRITING DESTINY ]
+  <!-- ZERO — glitch title layers -->
+  <g text-anchor="middle" font-family="Share Tech Mono,monospace" font-weight="700" letter-spacing="22">
+    <text x="505" y="186" font-size="90" fill="#dc143c" opacity="0">
+      ZERO
+      <animate attributeName="x" values="505;496;507;500" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.45;0;0.35;0" dur="3.2s" repeatCount="indefinite"/>
     </text>
+    <text x="495" y="186" font-size="90" fill="#6a0dad" opacity="0">
+      ZERO
+      <animate attributeName="x" values="495;505;492;500" dur="4.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.55;0;0.3" dur="4.1s" repeatCount="indefinite"/>
+    </text>
+    <!-- Main -->
+    <text x="500" y="186" font-size="90" fill="#f0eaf8" class="title-main" filter="url(#glowCrimson)">ZERO</text>
   </g>
 
-  <!-- Bottom Interactive / Blinking Command Title -->
-  <g transform="translate(500, 440)">
-    <text x="0" y="0" text-anchor="middle" class="text-title glitch-active">MR. FOOL</text>
-  </g>
+  <!-- Subtitle -->
+  <text x="500" y="227" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="12.5" fill="#9b59b6" letter-spacing="7" class="subtitle">
+    THE DEMON EMPEROR — IMMORTALIZED IN LOGIC
+  </text>
+
+  <!-- Decorative rule -->
+  <line x1="220" y1="241" x2="780" y2="241" stroke="url(#bgGrad)" stroke-width="0">
+    <animate attributeName="stroke" values="#4b0082;#dc143c;#4b0082" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="220" y1="241" x2="780" y2="241" stroke="#6a0dad" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Tactical notation -->
+  <text x="500" y="263" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10" fill="#4b0082" letter-spacing="3" opacity="0.65">
+    [ a1 → e4 → checkmate  ·  all according to plan ]
+  </text>
+
+  <!-- Rose petals -->
+  <ellipse cx="70"  cy="420" rx="5" ry="9" fill="#8b0000" class="rose1" transform="rotate(-25,70,420)"/>
+  <ellipse cx="930" cy="420" rx="4" ry="7" fill="#6a0dad" class="rose2" transform="rotate(15,930,420)"/>
+  <ellipse cx="200" cy="420" rx="6" ry="10" fill="#8b0000" class="rose3" transform="rotate(10,200,420)"/>
+  <ellipse cx="800" cy="420" rx="4" ry="8" fill="#4b0082" class="rose4" transform="rotate(-20,800,420)"/>
+
+  <!-- Bottom signature -->
+  <text x="500" y="394" text-anchor="middle" font-family="Share Tech Mono,monospace" font-size="10.5" fill="#6a0dad" letter-spacing="5" class="sig">
+    watashiwa01  //  OPERATION ZERO  //  ONLINE
+  </text>
 </svg>
